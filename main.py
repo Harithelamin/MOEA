@@ -29,3 +29,18 @@ Max_accessibility = 10  # Max accessibility per user.
 # Define the problem as a multi-objective optimization
 creator.create("FitnessMulti", base.Fitness, weights=(-1.0, 1.0, 1.0))  # Cost: Minimize, Charging Speed: Maximize, Accessibility: Maximize
 creator.create("Individual", list, fitness=creator.FitnessMulti)
+
+# Define the evaluation function
+def evaluate(individual):
+    """
+    The evaluation function considers three objectives:
+    1. Minimize cost of the stations
+    2. Maximize charging speed (efficiency)
+    3. Maximize user accessibility
+    """
+
+    cost = sum(individual[:Num_stations]) * Max_cost / Num_stations  # cost calculation
+    charging_speed = sum(individual[Num_stations:Num_stations*2]) * Max_speed / Num_stations  # charging speed
+    accessibility = sum(individual[Num_stations*2:]) * Max_accessibility / Num_stations  # accessibility score
+
+    return cost, charging_speed, accessibility  # Return the three objectives
