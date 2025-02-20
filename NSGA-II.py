@@ -62,9 +62,9 @@ creator.create("Individual", list, fitness=creator.FitnessMulti)
 def evaluate(individual):
     """
     Evaluates the individual based on three objectives:
-    - Coverage: the area covered by the charging stations.
-    - Power Level: the power per charger (either 50W, 150W, 350W).
-    - Cost: the total cost based on cost per charger and number of chargers.
+    1. Coverage: the area covered by the charging stations.
+    2. Power Level: the power per charger (50W, 150W, 350W).
+    3. Cost: the total cost based on cost per charger and number of chargers.
     """
     # individual values
     coverage_x = individual[0]
