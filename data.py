@@ -11,11 +11,14 @@ def merege_data():
        # Merge station data with cost data on 'Power Level (kW)'
        merged_data = pd.merge(stations_data, cost_data, on='Power Level (kW)', how='left')
 
-       # Show the merged data with the calculated costs
+       # Merged data with the calculated costs
        print(merged_data[['Station Name', 'Address', 'Power Level (kW)', 'Chargers per Site', 
                  'Labor', 'Materials', 'Permit', 'Taxes', 'Total']])
        # Remove the 'Type' column
        merged_data = merged_data.drop(columns=['Type'])
+
+       # Drop the specified columns Labor, Materials, Permit, Taxes
+       merged_data = merged_data.drop(columns=['Labor', 'Materials', 'Permit', 'Taxes'])
 
        # drop rows with missing values in the 'Total' column
        merged_data = merged_data.dropna(subset=['Total'])
@@ -23,8 +26,7 @@ def merege_data():
        # Save the updated data to a new CSV file
        merged_data.to_csv('Datasets/data.csv', index=False)
 
-#
-#man
+# Testing
 def main():
     print("start")
 

@@ -1,4 +1,8 @@
 Station Name,Address,Status,Waiting Time,Type,Coordinates,Charging Type,Power Level (kW)
+"Shell - Greenwood, SC",3228 US-25,N/A,Unknown,N/A,"34.13853417668945, -82.13121362784486",N/A,150
+Richmond Community College,1042 W Hamlet Ave,N/A,Unknown,N/A,"34.902852224750134, -79.71125827333924",N/A,150
+Shell,2925 Narrow Paved Road,N/A,Unknown,N/A,"33.968532006106074, -80.04545027635909",N/A,150
+The Inn at the Crossroads,128 W Main Street,N/A,Unknown,N/A,"33.87412619887124, -79.7552998100505",N/A,150
 Comite Civico del Valle,235 Main Street,N/A,Unknown,N/A,"32.97899335131942, -115.53844425131359",N/A,180
 Tesla Supercharger - Florin Town Center - Sacramento,6071 Florin Road,N/A,Unknown,N/A,"38.49642636262331, -121.43159284547673",N/A,325
 Market Square at Arden Fair - Sacramento,1735 Arden Way,N/A,Unknown,N/A,"38.597460870053084, -121.42196824300697",N/A,350
@@ -27,7 +31,7 @@ Crowne Plaza - Lake Placid,101 Olympic Drive,N/A,Unknown,N/A,"44.28445990895344,
 Cambria Hotel - Niagara Falls,311 Rainbow Blvd,N/A,Unknown,N/A,"43.08273774135395, -79.05920344864197",N/A,200
 Marathon Commerce Market Spirits,519 W Commerce Rd,N/A,Unknown,N/A,"42.59089235729451, -83.48661256861095",N/A,180
 Gateway Plaza,39010 Paseo Padre Pkwy,N/A,Unknown,N/A,"37.55283996698718, -121.9790903232084",N/A,350
-Chesterfield Crossing,11301 Midlothian Tpke,N/A,Unknown,N/A,"37.50415849614184, -77.60369851800704",N/A,350
+"Target #1041 - Richmond, VA",11301 Midlothian Tpke,N/A,Unknown,N/A,"37.50415849614184, -77.60369851800704",N/A,350
 Loughborough Commons,932 Loughborough Ave,N/A,Unknown,N/A,"38.554346760721955, -90.26376246747958",N/A,350
 Shops at Kendall,9001 SW 127th Ave.,N/A,Unknown,N/A,"25.685233380708667, -80.39895533986856",N/A,350
 The Shops at La Jolla Village,8801 Villa La Jolla Dr,N/A,Unknown,N/A,"32.86959694815948, -117.23104041764023",N/A,350
@@ -95,7 +99,3 @@ EvGo GM Energy ,2210 Camp Swatara Road,N/A,Unknown,N/A,"40.462954413047584, -76.
 "Buc-kees #58 – Auburn, AL ",2500 Buc-ee’s Blvd,N/A,Unknown,N/A,"32.55209099999874, -85.52663600000102",N/A,400
 "Buck-ee's #62 – Springfield, MO",3284 N Beaver Road,N/A,Unknown,N/A,"37.252319, -93.18096",N/A,400
 " Buc-ee's #17 – Luling, TX ",10070 West IH 10,N/A,Unknown,N/A,"29.65014000531538, -97.59345379309245",N/A,400
-" Buc-ee's #44 – Melissa, TX ",180 Bucees Blvd,N/A,Unknown,N/A,"33.27018663525095, -96.59213114785251",N/A,400
-One Loudoun,20350 Minot Drive,N/A,Unknown,N/A,"39.05251367395164, -77.45222688932651",N/A,400
-"Chisholm Plaza - Plano, TX",1915 Central Expy #600,N/A,Unknown,N/A,"33.027995, -96.711414",N/A,400
-"Ionna Rechargery Relay - Tempe, AZ",711 N Scottsdale Road,N/A,Unknown,N/A,"33.4372, -111.92593",N/A,400
