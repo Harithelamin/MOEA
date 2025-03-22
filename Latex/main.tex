@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{cite}
 \usepackage{longtable}
+\usepackage{array}
 
 \title{Multi-objective Evolutionary Algorithms for Solving the Electric Vehicle Charging Station Infrastructure Problem}
 \author{Harith Elamin}
@@ -120,6 +121,33 @@ Standard genetic operators such as selection, crossover, and mutation are employ
 
 \chapter{The Experiment}
 
+\begin{table}[h!]
+    \centering
+    \small % Reduce the font size for the table
+    \begin{tabular}{|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{3.5cm}|}
+    \hline
+    \textbf{Power Range} & \textbf{Type of Charger} & \textbf{Hardware Cost} & \textbf{Installation Cost} & \textbf{Total Estimated Cost} \\
+    \hline
+    3 kW - 7 kW & Level 1 or Level 2 Charger & \$500 - \$1,500 & \$300 - \$500 & \$800 - \$2,000 \\
+    \hline
+    7 kW - 22 kW & Level 2 Charger & \$1,500 - \$5,000 & \$1,000 - \$2,500 & \$2,500 - \$7,500 \\
+    \hline
+    50 kW - 100 kW & DC Fast Charger & \$30,000 - \$50,000 & \$50,000 - \$100,000 & \$80,000 - \$150,000 \\
+    \hline
+    100 kW - 150 kW & DC Fast Charger & \$50,000 - \$70,000 & \$50,000 - \$100,000 & \$100,000 - \$170,000 \\
+    \hline
+    150 kW - 200 kW & DC Fast Charger & \$70,000 - \$100,000 & \$100,000 - \$150,000 & \$170,000 - \$250,000 \\
+    \hline
+    200 kW - 350 kW & Ultra-Fast Charger & \$100,000 - \$150,000 & \$150,000 - \$250,000 & \$250,000 - \$400,000 \\
+    \hline
+    350 kW - 400 kW & Ultra-Fast Charger & \$120,000 - \$150,000 & \$150,000 - \$250,000 & \$270,000 - \$400,000 \\
+    \hline
+    \end{tabular}
+    \caption{Cost Estimates for Different Types of EV Chargers}
+    \end{table}
+    
+
+
 \section{Test Case}
 In this experiment, we evaluate the performance of NSGA-II algorithm. The test case is based on one of the largest cities in the world, and the details of the test case include:
 
@@ -169,6 +197,13 @@ The performance of the algorithms is evaluated based on the following metrics:
     \bibitem{ref6} K. Deb, A. Pratap, S. Agarwal, T. Meyarivan, \textit{A Fast and Elitist Multi-objective Genetic Algorithm: NSGA-II}, IEEE Transactions on Evolutionary Computation, vol. 6, no. 2, pp. 182-197, 2002.
     \bibitem{ref7} Q. Zhang, H. Li, \textit{Strength Pareto Evolutionary Algorithm 2}, Springer, 2011.
     \bibitem{ref8} K. Deb, A. Pratap, S. Agarwal, \& T. Meyarivan, \textit{A Fast and Elitist Multi-objective Genetic Algorithm: NSGA-II}, IEEE Transactions on Evolutionary Computation, vol. 6, no. 2, pp. 182-197, 2002. DOI: 10.1109/4235.996017.
+
+    $
+    EV Infrastructure Cost Source 
+    /$
+    \bibitem{ref9} U.S. Department of Energy - Electric Vehicle Charging Infrastructure. This source provides a general overview of costs for Level 1, Level 2, and DC Fast Chargers. The estimates are based on information from various industry reports. \href{https://www.energy.gov/eere/vehicles/ev-charging-infrastructure}{Link: U.S. Department of Energy - Electric Vehicle Charging Infrastructure}
+    \bibitem{ref10} PV Magazine - What Does an EV Fast Charger Cost? This article offers insights into the cost breakdown of installing fast chargers, including hardware and installation costs for DC Fast Chargers. \href{https://www.pv-magazine.com/2021/10/18/what-does-an-ev-fast-charger-cost/}{Link: What Does an EV Fast Charger Cost?}
+
 \end{thebibliography}
 
 
