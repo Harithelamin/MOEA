@@ -40,6 +40,7 @@ class StationOptimization:
         creator.create("FitnessMulti", base.Fitness, weights=(1.0, -1.0, 1.0)) 
         creator.create("Individual", list, fitness=creator.FitnessMulti)
 
+    # Define objectives
     def evaluate(self, individual):
         # Set Individual as a list of station
         selected_stations = self.data.iloc[individual]
@@ -60,13 +61,16 @@ class StationOptimization:
         if len(valid_stations) == 0:
             return (0, float('inf'), 0)  # invalid location
         
+        # OBJECTIVE 1: Maximizing Coverage
         # Coverage: number of unique locations covered the area
         unique_locations = valid_stations[['latitude', 'longitude']].drop_duplicates()
         coverage = len(unique_locations)  # Number of unique locations
 
+        # OBJECTIVE 2: Minimizing Cost
         # Total number of points 
         points = valid_stations['number_of_points'].sum()
 
+        # OBJECTIVE 3: Maximizing Power
         # Power_kw: randomly select a power kw for each selected station 
         power_kw = sum(random.choice(self.power_levels) for _ in range(len(valid_stations)))
         
@@ -150,34 +154,15 @@ class StationOptimization:
         optimized_data.to_csv(self.optimized_data_path, index=False)
 
         print("Optimized data saved")
-        return optimized_data
+        return optimized_data       
+    
 
-    def plot_results(self, optimized_data):
-        # Plot the stations before optimization
-        plt.figure(figsize=(10, 6))
-        plt.scatter(self.data['longitude'], self.data['latitude'], c=self.data['number_of_points'], cmap='viridis', s=10)
-        plt.colorbar(label='Number of Points')
-        plt.title('Original Data')
-        plt.xlabel('Longitude')
-        plt.ylabel('Latitude')
-        plt.savefig('original_data.png')
-        plt.show()
-
-        # Plot the stations after optimization
-        plt.figure(figsize=(10, 6))
-        plt.scatter(optimized_data['longitude'], optimized_data['latitude'], c=optimized_data['number_of_points'], cmap='viridis', s=50)
-        plt.colorbar(label='Number of Points')
-        plt.title('Optimized Data')
-        plt.xlabel('Longitude')
-        plt.ylabel('Latitude')
-        plt.savefig('optimized_data.png')
-        plt.show()
 
 def main():
     # Path to the dataset
     current_directory = os.getcwd()
     data_path = os.path.join(current_directory, "Datasets", "station_cost.csv")
-    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")  # Fixed typo in 'obtimized_data.csv'
+    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
 
     # Set hyperparameters    
     parms = {

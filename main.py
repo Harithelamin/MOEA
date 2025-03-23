@@ -1,9 +1,8 @@
 import os
 import pandas as pd
-import stations
-import pre_processing_data
-import plotting_EVCS
-from nsga import EVCS_Optimization
+from nsga_II import StationOptimization
+import stations 
+import cost
 
 
 
@@ -47,55 +46,47 @@ from nsga import EVCS_Optimization
 # Level 1 using a standard 120V outlet, and slower than level 2
 # while Level 2 is faster and requires a 240V outlet.
 
- # Path to your CSV file
-
-# Define the relative path to the file
-current_directory = os.getcwd()
-url = "https://api.openchargemap.io/v3/poi"
-data_path = os.path.join(current_directory, "Datasets", "california_stations.csv")
-used_data_path = os.path.join(current_directory, "Datasets", "data.csv")
-
-
-# Load the datasets
-stations_data = pd.read_csv("Datasets/california_stations.csv")
-cost_data = pd.read_csv("Datasets/EV_tation_infrastructure_cost.csv")
-used_data = pd.read_csv("Datasets/data.csv")
-
-# Set algorithm hyperparameters    
-parms = {
-    'population_size': 100,
-    'generations': 50,
-    'mu': 50,
-    'lambda_': 100,  
-    'cxpb': 0.7,
-    'mutpb': 0.2,
-    'data_file': used_data_path
-}
-
-
 
 def main():
-    print("Fetch station data...")
-    stations.get_stations_data(url, data_path) 
+    # stations url path
+    url = "https://api.openchargemap.io/v3/poi"
+    # Path to the dataset
+    current_directory = os.getcwd()
+    data_path = os.path.join(current_directory, "Datasets", "station_cost.csv")
+    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
 
-    print("Merege the data")
-    pre_processing_data.merege_data(stations_data, cost_data)
+    # Set hyperparameters    
+    parms = {
+        'population_size': 100,
+        'generations': 50,
+        'mu': 50,
+        'lambda_': 100,  
+        'cxpb': 0.7,
+        'mutpb': 0.2,
+        'data_file': data_path,
+        'optimized_data_file': optimized_data_path
+    }
 
-    print("Ploatin EVCS befor optimization")
-    plotting_EVCS.ploatin_EVCS(used_data)
-    
-    print("EVCS Optimization")
-    optimization = EVCS_Optimization(parms)
+    print("Fetching station data...")
+    stations.get_stations_data(url, data_path)  
 
-    print("Pareto Front")
-    pareto_front = optimization.run_algorithm()
+    print("Calcuate the cost...")
+    cost.calculatin_process(data_path)
 
-    print("Display the results")
-    optimization.display_results(pareto_front)
+    # Initialize the optimization class
+    optimizer = StationOptimization(parms)  
+
+    # Setup toolbox for DEAP
+    optimizer.setup_toolbox()
+
+    # Run the algorithm
+    optimizer.run_algorithm()
+
+    # Collect optimized data and save to CSV
+    optimized_data = optimizer.collect_optimized_data()
+
+    print("Plot the results...")
+    #optimizer.plot_results(optimized_data)  
 
 if __name__ == "__main__":
     main()
-
-
-
-

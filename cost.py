@@ -57,11 +57,9 @@ def calculate_station_cost(station_data):
 def load_data_from_csv(station_data_path):
     return pd.read_csv(station_data_path)
 
-# Testing
-def main():
+# run calculatin process
+def calculatin_process(station_data_path):
     current_directory = os.getcwd()
-    station_data_path = os.path.join(current_directory, "Datasets", "stations.csv")
-    
     # Load the data
     station_data = load_data_from_csv(station_data_path)
 
@@ -70,12 +68,21 @@ def main():
 
     # Calculate station cost
     station_data = calculate_station_cost(station_data)
-    
+
     # Save the file
     output_path = os.path.join(current_directory, "Datasets", "station_cost.csv")
     station_data.to_csv(output_path, index=False)
-
+      
     print(f"Costs file saved")
+
+
+# Testing
+def main():
+    current_directory = os.getcwd()
+    station_data_path = os.path.join(current_directory, "Datasets", "stations.csv")
+    calculatin_process(station_data_path)
+    
+
 
 if __name__ == "__main__":
     main()
