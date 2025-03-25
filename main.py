@@ -1,6 +1,27 @@
+# Reference
+# For Genetic, and NSGA-II algorithm.
+# DEAP Documentation: https://deap.readthedocs.io/en/master/
+# NSGA-II (NSGA2) in DEAP: https://deap.readthedocs.io/en/master/tutorials/faq.html#how-can-i-use-nsga2
+# Deb, K., Pratap, A., Agarwal, S., & Meyarivan, T. (2002). "A fast and elitist multiobjective genetic algorithm: NSGA-II". IEEE Transactions on Evolutionary Computation, 6(2), 182–197.
+# Geopy Documentation: https://geopy.readthedocs.io/en/stable/
+# Pandas Documentation: https://pandas.pydata.org/pandas-docs/stable/
+# Matplotlib Documentation: https://matplotlib.org/stable/contents.html
+# Coello, C. A. C. (2006). Evolutionary Multi-objective Optimization: A Historical View of the Field. In: Handbook of Evolutionary Computation. Oxford University Press.
+# Nagar, S. (2019). Hands-On Genetic Algorithms with Python: Solving Optimization Problems with Python. Packt Publishing.
+
+# For openchargemap, and requests from api.
+# https://requests.readthedocs.io/en/latest/api/#requests.get
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
+# https://openchargemap.org/site/develop/api
+
+# For visualization.
+# Official documentation for Matplotlib, which is used for creating plots.
+# Link: https://matplotlib.org/stable/contents.html
 import os
 import pandas as pd
-from nsga_II import StationOptimization
+from nsga_II import EVCS_Optimization
+import plot
+print(dir(plot))
 import stations 
 import cost
 
@@ -52,15 +73,18 @@ def main():
     url = "https://api.openchargemap.io/v3/poi"
     # Path to the dataset
     current_directory = os.getcwd()
-    data_path = os.path.join(current_directory, "Datasets", "station_cost.csv")
+    data_path = os.path.join(current_directory, "Datasets", "stations.csv")
     optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
+    original_map_path = os.path.join(current_directory, "Figures")
+    optimized_map_path = os.path.join(current_directory, "Figures")
+
 
     # Set hyperparameters    
     parms = {
         'population_size': 100,
         'generations': 50,
         'mu': 50,
-        'lambda_': 100,  
+        'lambda_': 100,
         'cxpb': 0.7,
         'mutpb': 0.2,
         'data_file': data_path,
@@ -68,25 +92,29 @@ def main():
     }
 
     print("Fetching station data...")
-    stations.get_stations_data(url, data_path)  
+    #stations.get_stations_data(url, data_path)  
 
-    print("Calcuate the cost...")
-    cost.calculatin_process(data_path)
+    print("Calcuate the cost for original data...")
+    #cost.calculatin_process(data_path)
 
-    # Initialize the optimization class
-    optimizer = StationOptimization(parms)  
+    
+    print("Calcuate the cost for obtimized data...")
+    #cost.calculatin_process(data_path)
 
-    # Setup toolbox for DEAP
-    optimizer.setup_toolbox()
+    # Create the EVCS_Optimization object
+    optimization = EVCS_Optimization(parms)
 
-    # Run the algorithm
-    optimizer.run_algorithm()
+    # Run the optimization
+    optimization.run()
 
-    # Collect optimized data and save to CSV
-    optimized_data = optimizer.collect_optimized_data()
+    # plot to visualize the results
 
     print("Plot the results...")
-    #optimizer.plot_results(optimized_data)  
+    plot.plot_results(optimization.population, optimized_map_path) 
+    # 
+    #plot.plot_map(data_path, original_map_path) 
+    #plot.plot_map(optimized_data_path, optimized_map_path) 
+
 
 if __name__ == "__main__":
     main()

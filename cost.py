@@ -70,7 +70,7 @@ def calculatin_process(station_data_path):
     station_data = calculate_station_cost(station_data)
 
     # Save the file
-    output_path = os.path.join(current_directory, "Datasets", "station_cost.csv")
+    output_path = os.path.join(current_directory, "Datasets", "station_cost_after_obtimized.csv")
     station_data.to_csv(output_path, index=False)
       
     print(f"Costs file saved")
@@ -79,7 +79,7 @@ def calculatin_process(station_data_path):
 # Testing
 def main():
     current_directory = os.getcwd()
-    station_data_path = os.path.join(current_directory, "Datasets", "stations.csv")
+    station_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
     calculatin_process(station_data_path)
     
 

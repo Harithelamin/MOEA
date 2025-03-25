@@ -1,167 +1,206 @@
+# Reference
+# DEAP Documentation: https://deap.readthedocs.io/en/master/
+# NSGA-II (NSGA2) in DEAP: https://deap.readthedocs.io/en/master/tutorials/faq.html#how-can-i-use-nsga2
+# Deb, K., Pratap, A., Agarwal, S., & Meyarivan, T. (2002). "A fast and elitist multiobjective genetic algorithm: NSGA-II". IEEE Transactions on Evolutionary Computation, 6(2), 182–197.
+# Geopy Documentation: https://geopy.readthedocs.io/en/stable/
+# Pandas Documentation: https://pandas.pydata.org/pandas-docs/stable/
+# Matplotlib Documentation: https://matplotlib.org/stable/contents.html
+# Coello, C. A. C. (2006). Evolutionary Multi-objective Optimization: A Historical View of the Field. In: Handbook of Evolutionary Computation. Oxford University Press.
+# Nagar, S. (2019). Hands-On Genetic Algorithms with Python: Solving Optimization Problems with Python. Packt Publishing.
+
+
+
 import os
 import pandas as pd
 import random
-from deap import base, creator, tools
 import matplotlib.pyplot as plt
+from deap import base, creator, tools, algorithms
+from geopy.distance import geodesic
 import numpy as np
 
 # NSGA-II Algorithm
 # to optimize multiple objectives: 
-# 1. maximizing coverage, 
-# 2. maximizing power (to reduce waiting time), 
-# 3. minimizing cost. 
+# 1. Maximize coverage
+# 2. Maximize charger speed to reduce waiting time
+# 3. Minimize stations number
+# 4. Minimize chargers number
+# 5. maximizing charger powr(to reduce waiting time) 
+# 6. minimizing cost. # No need any action. 
 # The goal is to develop a solution that finds a balance between these objectives.
 
 
 # Define the objectives problem 
-# maximize coverage 
-# maximize power to reduce the waiting time
-# minimize cost
+# 1. Maximize coverage
+# 2. Maximize charger speed to reduce waiting time
+# 3. Minimize stations
+# 4. Minimize chargers
+# 5. maximizing power
 
 
-class StationOptimization:
+class EVCS_Optimization:
     def __init__(self, parms):
         # Initializing the data and other parameters
-        self.data = pd.read_csv(parms['data_file']) 
-        self.optimized_data_path = parms['optimized_data_file'] 
-        self.num_generations = parms['generations']  
+        self.data = pd.read_csv(parms['data_file'])
+        self.optimized_data_file = parms['optimized_data_file']
+        self.num_generations = parms['generations']
         self.population_size = parms['population_size']
         self.cx_prob = parms['cxpb']
         self.mut_prob = parms['mutpb']
-        self.num_stations = parms['mu'] 
+        self.mu = parms['mu']
+        self.lambda_ = parms['lambda_']
         self.power_levels = [14.2, 11.5, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400]
         self.toolbox = None
         self.population = None
 
         # Create problem using DEAP
-        # Maximize coverage, 
-        # minimize points, 
-        # maximize power_kw
-        creator.create("FitnessMulti", base.Fitness, weights=(1.0, -1.0, 1.0)) 
+        # Maximize coverage and charger speed, minimize stations and chargers
+        creator.create("FitnessMulti", base.Fitness, weights=(1.0, 1.0, -1.0, -1.0))  
         creator.create("Individual", list, fitness=creator.FitnessMulti)
 
-    # Define objectives
-    def evaluate(self, individual):
-        # Set Individual as a list of station
-        selected_stations = self.data.iloc[individual]
-        
-        # Define California's latitude and longitude bounds
-        valid_lat_range = (32.5343, 42.0095)  
-        valid_lon_range = (-124.4096, -114.1312) 
-        
-        # Filter out stations that are outside of California's bounds
-        valid_stations = selected_stations[ 
-            (selected_stations['latitude'] >= valid_lat_range[0]) & 
-            (selected_stations['latitude'] <= valid_lat_range[1]) & 
-            (selected_stations['longitude'] >= valid_lon_range[0]) & 
-            (selected_stations['longitude'] <= valid_lon_range[1])
-        ]
-        
-        # If no valid stations are selected, return a very low coverage
-        if len(valid_stations) == 0:
-            return (0, float('inf'), 0)  # invalid location
-        
-        # OBJECTIVE 1: Maximizing Coverage
-        # Coverage: number of unique locations covered the area
-        unique_locations = valid_stations[['latitude', 'longitude']].drop_duplicates()
-        coverage = len(unique_locations)  # Number of unique locations
-
-        # OBJECTIVE 2: Minimizing Cost
-        # Total number of points 
-        points = valid_stations['number_of_points'].sum()
-
-        # OBJECTIVE 3: Maximizing Power
-        # Power_kw: randomly select a power kw for each selected station 
-        power_kw = sum(random.choice(self.power_levels) for _ in range(len(valid_stations)))
-        
-        return (coverage, points, power_kw)
-
-    def setup_toolbox(self):
+        # Initialize toolbox
         self.toolbox = base.Toolbox()
-        
-        # Create individuals randomly from the data
-        self.toolbox.register("attr_int", random.randint, 0, len(self.data) - 1)
-        # Select 10 stations for an individual
-        self.toolbox.register("individual", tools.initRepeat, creator.Individual, self.toolbox.attr_int, n=self.num_stations)  
-        # Corrected population initialization
-        self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)  
-
-        # Register evaluation function
-        self.toolbox.register("mate", tools.cxTwoPoint)
-        self.toolbox.register("mutate", tools.mutShuffleIndexes, indpb=0.1)
+        self.toolbox.register("individual", tools.initIterate, creator.Individual, self.create_individual)
+        self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
+        self.toolbox.register("mate", self.cxTwoPointCheck)
+        self.toolbox.register("mutate", self.mutShuffleIndexesCheck, indpb=0.2)
         self.toolbox.register("select", tools.selNSGA2)
         self.toolbox.register("evaluate", self.evaluate)
 
-    def run_algorithm(self):
-        # Create a population using population size
-        self.population = self.toolbox.population(n=self.population_size)  
+        # Initialize population
+        self.population = self.toolbox.population(n=self.population_size)
 
-        # Run the algorithm
-        for gen in range(self.num_generations):
-            print(f"Generation {gen}")
-            
-            # Select the next generation of individuals
-            offspring = self.toolbox.select(self.population, len(self.population))
-            
-            # Clone the selected individuals
-            offspring = list(map(self.toolbox.clone, offspring))
-            
-            # Apply crossover and mutation to create the next generation
-            for child1, child2 in zip(offspring[::2], offspring[1::2]):
-                if random.random() < self.cx_prob:
-                    self.toolbox.mate(child1, child2)
-                    del child1.fitness.values
-                    del child2.fitness.values
-            
-            for mutant in offspring:
-                if random.random() < self.mut_prob:
-                    self.toolbox.mutate(mutant)
-                    del mutant.fitness.values
-            
-            # Evaluate individuals with invalid fitness
-            invalid_individuals = [ind for ind in offspring if not ind.fitness.valid]
-            fitnesses = map(self.toolbox.evaluate, invalid_individuals)
-            for ind, fit in zip(invalid_individuals, fitnesses):
-                ind.fitness.values = fit
-            
-            # Replace the old population with the new one
-            self.population[:] = offspring
-            
-            # Print statistics of the current generation
-            front = tools.sortNondominated(self.population, len(self.population), first_front_only=True)[0]
-            front_fitness = [ind.fitness.values for ind in front]
-            print(f"Best Fitness: {front_fitness[0]}")
+    # Define objectives
+    # Objective 1: Maximize Coverage
+    def calculate_coverage(self, stations):
+        coverage = 0
+        for i in range(len(stations)):
+            for j in range(i + 1, len(stations)):
+                station1 = self.data.iloc[stations[i]]
+                station2 = self.data.iloc[stations[j]]
+                distance = geodesic((station1['latitude'], station1['longitude']),
+                                    (station2['latitude'], station2['longitude'])).km
+                coverage += distance
+        return coverage
 
-    def collect_optimized_data(self):
-        # Get the Pareto-optimal solutions (first front)
-        front = tools.sortNondominated(self.population, len(self.population), first_front_only=True)[0]
+    # Objective 2: Maximize Charger Speed
+    def calculate_charger_speed(self, stations):
+        return max(self.data.iloc[station]['charger_speed'] for station in stations) if stations else 0
 
-        # Collect the final Pareto-optimal individuals
+    # Objective 3: Minimize the Number of Stations
+    def calculate_num_stations(self, stations):
+        return len(stations)
+
+    # Objective 4: Minimize the Number of Chargers
+    def calculate_num_chargers(self, stations):
+        return sum(self.data.iloc[station]['num_chargers'] for station in stations)
+
+    # Define the evaluation function that combines all objectives
+    def evaluate(self, individual):
+        coverage = self.calculate_coverage(individual)
+        charger_speed = self.calculate_charger_speed(individual)
+        num_stations = self.calculate_num_stations(individual)
+        num_chargers = self.calculate_num_chargers(individual)
+        return coverage, charger_speed, num_stations, num_chargers
+
+    # Create a random individual with fewer stations selected
+    def create_individual(self):
+        num_stations = random.randint(1, len(self.data) // 2)
+        return random.sample(range(len(self.data)), num_stations)
+
+    # Crossover function with added size check to minimize station numbers
+    def cxTwoPointCheck(self, ind1, ind2):
+        if len(ind1) < 2 or len(ind2) < 2:
+            return ind1, ind2
+        return tools.cxTwoPoint(ind1, ind2)
+
+    # Mutation function to reduce the number of stations
+    def mutShuffleIndexesCheck(self, individual, indpb):
+        if len(individual) > 1:
+            if random.random() < indpb:
+                individual.remove(random.choice(individual))
+        return individual, 
+
+    # Run the algorithm
+    def run(self):
+        # Initialize stats, halloffame
+        stats = tools.Statistics(lambda ind: ind.fitness.values)
+        stats.register("avg", np.mean)
+        stats.register("std", np.std)
+        stats.register("min", np.min)
+        stats.register("max", np.max)
+        
+        # To Keep the best individual
+        halloffame = tools.HallOfFame(1)  
+
+        # Run the evolutionary algorithm (NSGA-II)
+        algorithms.eaMuPlusLambda(self.population, self.toolbox, mu=self.mu, lambda_=self.lambda_, 
+                                  cxpb=self.cx_prob, mutpb=self.mut_prob, ngen=self.num_generations,
+                                  stats=stats, halloffame=halloffame, verbose=True)
+
+        # Extract the Pareto front (non-dominated solutions)
+        pareto_front = tools.sortNondominated(self.population, len(self.population), first_front_only=True)[0]
+
+        # Collect and save optimized data
+        self.save_optimized_data(pareto_front)
+
+        # Plot results
+        self.plot_results(pareto_front)
+
+    def save_optimized_data(self, pareto_front):
         optimized_data = []
-        for ind in front:
-            selected_stations = self.data.iloc[ind]  # Get selected stations for each individual
-            row = selected_stations[['latitude', 'longitude', 'number_of_points', 'power_kw']].copy()  # Copy the relevant data
-            row['coverage'] = ind.fitness.values[0]  # Coverage (from fitness)
-            row['number_of_points'] = row['number_of_points'].sum()  # Sum of number_of_points for the selected stations
-            row['power_kw'] = [random.choice(self.power_levels) for _ in range(len(selected_stations))]  # Randomly choose power_kw
-            optimized_data.append(row)
 
-        # Convert to DataFrame and remove duplicates for unique stations only
-        optimized_data = pd.concat(optimized_data, ignore_index=True)
-        optimized_data = optimized_data.drop_duplicates(subset=['latitude', 'longitude'], keep='first')
+        for ind in pareto_front:
+            selected_stations = {}
 
-        # Save to CSV
-        optimized_data.to_csv(self.optimized_data_path, index=False)
+            for station in ind:
+                station_data = self.data.iloc[station]
+                station_id = station_data['station_id']
+                latitude = station_data['latitude']
+                longitude = station_data['longitude']
+                charger_speed = station_data['charger_speed']
 
-        print("Optimized data saved")
-        return optimized_data       
-    
+                if station_id not in selected_stations:
+                    selected_stations[station_id] = {
+                        'latitude': latitude,
+                        'longitude': longitude,
+                        'charger_speed': charger_speed,
+                        'num_points': 1
+                    }
+                else:
+                    selected_stations[station_id]['num_points'] += 1
 
+            for station_id, data in selected_stations.items():
+                optimized_data.append([station_id,
+                                       data['latitude'],
+                                       data['longitude'],
+                                       data['num_points'],
+                                       data['charger_speed']])
+
+        # Create DataFrame as original data, and save to CSV
+        optimized_df = pd.DataFrame(optimized_data, columns=["station_id", "latitude", "longitude", "number_of_points", "charger_speed"])
+        optimized_df = optimized_df.drop_duplicates(subset='station_id', keep='first')
+        optimized_df.to_csv(self.optimized_data_file, index=False)
+
+        print(f"Optimized data saved to {self.optimized_data_file}")
+
+    def plot_results(self, pareto_front):
+        coverage_values = [ind.fitness.values[0] for ind in pareto_front]
+        charger_speed_values = [ind.fitness.values[1] for ind in pareto_front]
+
+        plt.figure(figsize=(6, 4))
+        plt.scatter(coverage_values, charger_speed_values, color='blue')
+        plt.title('Objective 1: Coverage vs Objective 2: Charger Speed')
+        plt.xlabel('Coverage (km)')
+        plt.ylabel('Charger Speed (kW)')
+        plt.grid(True)
+        plt.show()
 
 def main():
-    # Path to the dataset
+    # Get the current directory
     current_directory = os.getcwd()
-    data_path = os.path.join(current_directory, "Datasets", "station_cost.csv")
+
+    # Define the path files
+    data_path = os.path.join(current_directory, "Datasets", "stations.csv")
     optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
 
     # Set hyperparameters    
@@ -169,27 +208,18 @@ def main():
         'population_size': 100,
         'generations': 50,
         'mu': 50,
-        'lambda_': 100,  
+        'lambda_': 100,
         'cxpb': 0.7,
         'mutpb': 0.2,
         'data_file': data_path,
         'optimized_data_file': optimized_data_path
     }
 
-    # Initialize the optimization class
-    optimizer = StationOptimization(parms)  
+    # Create the EVCS_Optimization object
+    optimization = EVCS_Optimization(parms)
 
-    # Setup toolbox for DEAP
-    optimizer.setup_toolbox()
-
-    # Run the algorithm
-    optimizer.run_algorithm()
-
-    # Collect optimized data and save to CSV
-    optimized_data = optimizer.collect_optimized_data()
-
-    # Plot results
-    optimizer.plot_results(optimized_data)
+    # Run the optimization
+    optimization.run()
 
 if __name__ == "__main__":
     main()

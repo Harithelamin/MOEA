@@ -1,3 +1,7 @@
+# # Reference
+# https://requests.readthedocs.io/en/latest/api/#requests.get
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
+# https://openchargemap.org/site/develop/api
 import os
 import numpy as np
 import requests
@@ -43,8 +47,13 @@ def get_stations_data(url, file_path):
         df.dropna(how='any', inplace=True)
 
         # Convert 'number_of_points' and 'power_kw' to numeric values
-        df['number_of_points'] = pd.to_numeric(df['number_of_points'], errors='coerce')
-        df['power_kw'] = pd.to_numeric(df['power_kw'], errors='coerce')
+        df['num_chargers'] = pd.to_numeric(df['number_of_points'], errors='coerce')
+        df['charger_speed'] = pd.to_numeric(df['power_kw'], errors='coerce')
+
+        df.drop(columns=['number_of_points'], inplace=True)
+        df.drop(columns=['power_kw'], inplace=True)
+
+        
 
 
         # Write to CSV
@@ -65,4 +74,5 @@ def main():
 
 if __name__ == "__main__":
     main()        
+
 
