@@ -77,6 +77,8 @@ def main():
     optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
     original_map_path = os.path.join(current_directory, "Figures")
     optimized_map_path = os.path.join(current_directory, "Figures")
+    output_directory = os.path.join(current_directory, "Figures")
+
 
 
     # Set hyperparameters    
@@ -102,18 +104,46 @@ def main():
     #cost.calculatin_process(data_path)
 
     # Create the EVCS_Optimization object
-    optimization = EVCS_Optimization(parms)
+    #optimization = EVCS_Optimization(parms)
 
     # Run the optimization
-    optimization.run()
+    #optimization.run()
 
     # plot to visualize the results
 
     print("Plot the results...")
-    plot.plot_results(optimization.population, optimized_map_path) 
+
+    #plot.plot_results(optimization.population, optimized_map_path) 
     # 
     #plot.plot_map(data_path, original_map_path) 
     #plot.plot_map(optimized_data_path, optimized_map_path) 
+
+
+    # Load the optimized data (Pareto front)
+    def load_optimized_data(file_path):
+        return pd.read_csv(file_path)
+
+    # Load optimized data (Pareto front)
+    pareto_front = load_optimized_data(optimized_data_path)
+
+    #print(pareto_front)
+    # Define the path to save the convergence plot
+    convergence_plot_path = os.path.join(output_directory, 'convergence_plot.png')
+    objective_distribution_path =os.path.join(current_directory, "objective_distribution.png")
+
+    # Generate and save the convergence plot
+    #plot_convergence(pareto_front, convergence_plot_path)
+
+    #plot_objective_distribution(pareto_front, objective_distribution_path)
+
+    #print(pareto_front.columns)
+
+
+    #plot.plot_objective(pareto_front, output_directory)
+    #print(pareto_front)
+
+
+
 
 
 if __name__ == "__main__":

@@ -1,21 +1,106 @@
 # Reference
 # Official documentation for Matplotlib, which is used for creating plots.
 # Link: https://matplotlib.org/stable/contents.html
+import os
+import sys
+import folium
 import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+from matplotlib import pyplot as plt
+import seaborn  as sns
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def plot_objective(pareto_front, output_directory):
+    # Number of stations
+    num_stations = len(pareto_front)
+
+    # Create figure for all subplots
+    fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+    # Plot 1: Locations
+    sns.scatterplot(x='longitude', y='latitude', data=pareto_front, ax=axes[0, 0])
+    axes[0, 0].set_title("Station Locations")
+    axes[0, 0].set_xlabel("Longitude")
+    axes[0, 0].set_ylabel("Latitude")
+
+    # Display the number of stations 
+    axes[0, 0].text(0.5, 0.05, f"Total Stations: {num_stations}", horizontalalignment='center', 
+                    verticalalignment='center', transform=axes[0, 0].transAxes, fontsize=12, color='black', 
+                    bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=0.5'))  # Adjust bbox
+
+    # Plot 2: Charger Speed
+    sns.histplot(pareto_front['charger_speed'], kde=True, ax=axes[0, 1])
+    axes[0, 1].set_title("Charger Speed Distribution")
+    axes[0, 1].set_xlabel("Charger Speed (kW)")
+    axes[0, 1].set_ylabel("Frequency")
+
+    # Plot 3: Number of Chargers per Station
+    sns.barplot(x='station_id', y='num_chargers', data=pareto_front, ax=axes[1, 0])
+    axes[1, 0].set_title("Number of Chargers per Station")
+    axes[1, 0].set_xlabel("Station ID")
+    axes[1, 0].set_ylabel("Number of Chargers")
+
+    # Plot 4: Charger Speed vs Chargers Number
+    sns.scatterplot(x='num_chargers', y='charger_speed', data=pareto_front, ax=axes[1, 1])
+    axes[1, 1].set_title("Charger Speed vs Number of Chargers")
+    axes[1, 1].set_xlabel("Number of Chargers")
+    axes[1, 1].set_ylabel("Charger Speed (kW)")
+
+    # Adjust layout
+    plt.tight_layout()
+
+    # Save the combined figure
+    fig.savefig(f'{output_directory}/all_plots.png')  # Saving as one figure
+    plt.clf()
+
+    # Optionally, save individual plots after adjusting layout for clarity
+    sns.scatterplot(x='longitude', y='latitude', data=pareto_front).set(title="Station Locations")
+    plt.savefig(f'{output_directory}/station_locations.png')
+    plt.clf()
+
+    sns.histplot(pareto_front['charger_speed'], kde=True).set(title="Charger Speed Distribution")
+    plt.savefig(f'{output_directory}/charger_speed.png')
+    plt.clf()
+
+    sns.barplot(x='station_id', y='num_chargers', data=pareto_front).set(title="Number of Chargers per Station")
+    plt.savefig(f'{output_directory}/num_chargers_per_station.png')
+    plt.clf()
+
+    sns.scatterplot(x='num_chargers', y='charger_speed', data=pareto_front).set(title="Charger Speed vs Number of Chargers")
+    plt.savefig(f'{output_directory}/charger_speed_vs_num_chargers.png')
+    plt.clf()
+
+    print("Plots saved successfully.")
+
+
+
+
+########################################
+
+
+
+def plot_convergence(pareto_front, output_file):
+
+    plt.scatter(pareto_front['latitude'], pareto_front['longitude'], color='blue')
+
+    # Set labels and title for the plot
+    plt.xlabel('Latitude')
+    plt.ylabel('Longitude')
+    plt.title('Convergence Plot')
+
+    # Save the plot to the specified output file
+    plt.savefig(output_file)
+    plt.close()
 
 def plot_results(pareto_front, save_path=None):
-    """
-    Plots all objectives against each other in a matrix format:
-    - Coverage vs Charger Speed
-    - Coverage vs Number of Stations
-    - Coverage vs Number of Chargers
-    - Charger Speed vs Number of Stations
-    - Charger Speed vs Number of Chargers
-    - Number of Stations vs Number of Chargers
-    
-    :param pareto_front: List of individuals in the pareto front
-    :param save_path: Path to save the plot. If None, the plot is shown, but not saved.
-    """
 
     # Get fitness values for all objectives
     coverage_values = [ind.fitness.values[0] for ind in pareto_front]
@@ -65,10 +150,6 @@ def plot_results(pareto_front, save_path=None):
         plt.show()
 
 
-
-import pandas as pd
-import folium
-import os
 
 def plot_map(data_path, output_path):
     # Load data from the CSV file

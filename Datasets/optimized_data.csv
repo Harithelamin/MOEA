@@ -1,4 +1,4 @@
-station_id,latitude,longitude,number_of_points,charger_speed
+station_id,latitude,longitude,num_chargers,charger_speed
 308670.0,43.088424,-70.792789,1,400.0
 309042.0,25.685233380708667,-80.39895533986856,1,350.0
 309038.0,36.959506142842926,-122.04617945331958,1,350.0
