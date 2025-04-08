@@ -24,17 +24,16 @@ import numpy as np
 # 2. Maximize charger speed to reduce waiting time
 # 3. Minimize stations number
 # 4. Minimize chargers number
-# 5. maximizing charger powr(to reduce waiting time) 
-# 6. minimizing cost. # No need any action. 
+# 5. minimizing cost. No action. 
 # The goal is to develop a solution that finds a balance between these objectives.
 
 
 # Define the objectives problem 
 # 1. Maximize coverage
 # 2. Maximize charger speed to reduce waiting time
-# 3. Minimize stations
-# 4. Minimize chargers
-# 5. maximizing power
+# 3. Minimize stations num
+# 4. Minimize chargers num
+
 
 
 class EVCS_Optimization:
@@ -53,7 +52,10 @@ class EVCS_Optimization:
         self.population = None
 
         # Create problem using DEAP
-        # Maximize coverage and charger speed, minimize stations and chargers
+        # Maximize coverage
+        # Maximize charger speed 
+        # Minimize stations num
+        # Minimize chargers num
         creator.create("FitnessMulti", base.Fitness, weights=(1.0, 1.0, -1.0, -1.0))  
         creator.create("Individual", list, fitness=creator.FitnessMulti)
 
@@ -106,6 +108,9 @@ class EVCS_Optimization:
     def create_individual(self):
         num_stations = random.randint(1, len(self.data) // 2)
         return random.sample(range(len(self.data)), num_stations)
+    
+    # Crossover combines the features of two parents individuals
+    # To create one or more "children"
 
     # Crossover function with added size check to minimize station numbers
     def cxTwoPointCheck(self, ind1, ind2):
@@ -113,7 +118,11 @@ class EVCS_Optimization:
             return ind1, ind2
         return tools.cxTwoPoint(ind1, ind2)
 
-    # Mutation function to reduce the number of stations
+    # Mutation makes small random changes to individuals.
+    # It helps maintain genetic diversity
+    # Mutation function to reduce the number of stations.
+
+    # we need mutShuffleIndexes to Keeps the solution valid (no duplicates or missing values)
     def mutShuffleIndexesCheck(self, individual, indpb):
         if len(individual) > 1:
             if random.random() < indpb:
@@ -128,11 +137,14 @@ class EVCS_Optimization:
         stats.register("std", np.std)
         stats.register("min", np.min)
         stats.register("max", np.max)
+
+        # Use Hall of Fame (HoF)
+        # To record of the best individuals found over the entire run of an evolutionary algorithm
         
         # To Keep the best individual
         halloffame = tools.HallOfFame(1)  
 
-        # Run the evolutionary algorithm (NSGA-II)
+        # Run NSGA-II algorithm 
         algorithms.eaMuPlusLambda(self.population, self.toolbox, mu=self.mu, lambda_=self.lambda_, 
                                   cxpb=self.cx_prob, mutpb=self.mut_prob, ngen=self.num_generations,
                                   stats=stats, halloffame=halloffame, verbose=True)
