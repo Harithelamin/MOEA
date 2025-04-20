@@ -6,6 +6,7 @@ import os
 import numpy as np
 import requests
 import pandas as pd
+from geopy.distance import geodesic
 
 # The parameters for the API request
 params = {
@@ -16,6 +17,18 @@ params = {
     "compact": True,
     "verbose": False,
 }
+
+# This method to calculate coverage
+def calculate_coverage(self, stations):
+    coverage = 0
+    for i in range(len(stations)):
+        for j in range(i + 1, len(stations)):
+            station1 = self.data.iloc[stations[i]]
+            station2 = self.data.iloc[stations[j]]
+            distance = geodesic((station1['latitude'], station1['longitude']),
+                                (station2['latitude'], station2['longitude'])).km
+            coverage += distance
+    return coverage   
 
 def get_stations_data(url, file_path):
     output_dir = os.path.dirname(file_path)
@@ -53,7 +66,11 @@ def get_stations_data(url, file_path):
         df.drop(columns=['number_of_points'], inplace=True)
         df.drop(columns=['power_kw'], inplace=True)
 
-        
+        # Calculate coverage
+        coverage = calculate_coverage(list(df.index))
+
+        # Add coverage as a new column
+        df.data["coverage"] = coverage          
 
 
         # Write to CSV
@@ -62,6 +79,9 @@ def get_stations_data(url, file_path):
         print(f"Data successfully saved to {file_path}.")
     else:
         print(f"Failed to retrieve data. HTTP Status Code: {response.status_code}")
+
+
+     
 
 # Testing
 def main():
