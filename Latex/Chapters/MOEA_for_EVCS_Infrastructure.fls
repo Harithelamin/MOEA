@@ -254,6 +254,11 @@ INPUT .\conc.tex
 INPUT .\conc.tex
 INPUT .\conc.tex
 INPUT conc.tex
+INPUT .\appendix.tex
+INPUT .\appendix.tex
+INPUT .\appendix.tex
+INPUT .\appendix.tex
+INPUT appendix.tex
 INPUT .\ref.tex
 INPUT .\ref.tex
 INPUT .\ref.tex
