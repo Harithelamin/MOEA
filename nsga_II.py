@@ -22,8 +22,8 @@ import numpy as np
 # to optimize multiple objectives: 
 # 1. Maximize coverage
 # 2. Maximize charger speed to reduce waiting time
-# 3. Minimize stations number
-# 4. Minimize chargers number
+# 3. Minimize stations number to minimizing cost
+# 4. Minimize chargers number to minimizing cost
 # 5. minimizing cost. No action. 
 # The goal is to develop a solution that finds a balance between these objectives.
 
@@ -47,7 +47,7 @@ class EVCS_Optimization:
         self.mut_prob = parms['mutpb']
         self.mu = parms['mu']
         self.lambda_ = parms['lambda_']
-        self.power_levels = [14.2, 11.5, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400]
+        self.power_levels = [11.5, 14.2, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400]
         self.toolbox = None
         self.population = None
 
@@ -113,6 +113,10 @@ class EVCS_Optimization:
     # To create one or more "children"
 
     # Crossover function with added size check to minimize station numbers
+
+    # cxTwoPoint is a two-point crossover function
+    # It selects two random points in the parents
+    # Then swaps the segments between those points to produce two new children.
     def cxTwoPointCheck(self, ind1, ind2):
         if len(ind1) < 2 or len(ind2) < 2:
             return ind1, ind2
@@ -132,6 +136,8 @@ class EVCS_Optimization:
     # Run the algorithm
     def run(self):
         # Initialize stats, halloffame
+
+        # We need stats to monitoring the performance of the algorithm over time.
         stats = tools.Statistics(lambda ind: ind.fitness.values)
         stats.register("avg", np.mean)
         stats.register("std", np.std)

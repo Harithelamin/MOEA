@@ -19,6 +19,7 @@
 # Link: https://matplotlib.org/stable/contents.html
 import os
 import pandas as pd
+from analyes import trade_off_plots
 from nsga_II import EVCS_Optimization
 import plot
 print(dir(plot))
@@ -43,7 +44,6 @@ import cost
 # 1. Coverage: Maximize the geographic area covered by EV charging stations.
 # 2: Cost: Minimize the cost of setting up the infrastructure for the charging stations.
 # 3. Power Level: Maximize the power level of the stations to improve charging efficiency and reduce waiting times.
-
 # 4. Charging Speed (Efficiency) Maximize the speed of the charging stations, considering faster charging options
 
 # 5: wait time
@@ -104,19 +104,19 @@ def main():
     #cost.calculatin_process(data_path)
 
     # Create the EVCS_Optimization object
-    #optimization = EVCS_Optimization(parms)
+    optimization = EVCS_Optimization(parms)
 
     # Run the optimization
-    #optimization.run()
+    optimization.run()
 
     # plot to visualize the results
 
     print("Plot the results...")
 
-    #plot.plot_results(optimization.population, optimized_map_path) 
+    plot.plot_results(optimization.population, optimized_map_path) 
     # 
-    #plot.plot_map(data_path, original_map_path) 
-    #plot.plot_map(optimized_data_path, optimized_map_path) 
+    plot.plot_map(data_path, original_map_path) 
+    plot.plot_map(optimized_data_path, optimized_map_path) 
 
 
     # Load the optimized data (Pareto front)
@@ -132,15 +132,18 @@ def main():
     objective_distribution_path =os.path.join(current_directory, "objective_distribution.png")
 
     # Generate and save the convergence plot
-    #plot_convergence(pareto_front, convergence_plot_path)
+    plot.plot_convergence(pareto_front, convergence_plot_path)
 
-    #plot_objective_distribution(pareto_front, objective_distribution_path)
+    plot.plot_objective_distribution(pareto_front, objective_distribution_path)
+    print(pareto_front.columns)
 
-    #print(pareto_front.columns)
 
+    plot.plot_objective(pareto_front, output_directory)
+    print(pareto_front)
 
-    #plot.plot_objective(pareto_front, output_directory)
+    #print("Ok")
     #print(pareto_front)
+    #trade_off_plots(pareto_front)
 
 
 

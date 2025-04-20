@@ -1,0 +1,67 @@
+# # Reference
+# https://requests.readthedocs.io/en/latest/api/#requests.get
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
+# https://openchargemap.org/site/develop/api
+import os
+import numpy as np
+import requests
+import pandas as pd
+from geopy.distance import geodesic
+
+# Calculate coverage distance
+def calculate_coverage(df):
+    coverage_list = []
+
+    for i in range(len(df)):
+        station_i = df.iloc[i]
+        lat_i, lon_i = station_i['latitude'], station_i['longitude']
+
+        coverage = 0
+        for j in range(len(df)):
+            if i == j:
+                continue  # skip itself
+
+            station_j = df.iloc[j]
+            lat_j, lon_j = station_j['latitude'], station_j['longitude']
+
+            distance = geodesic((lat_i, lon_i), (lat_j, lon_j)).km
+            coverage += distance
+
+        coverage_list.append(coverage)
+
+    return coverage_list      
+    
+# Add coverage columns in dataset  
+def add_coverage(data_path, new_data_path):
+    df = pd.read_csv(data_path)
+
+    # Ensure numeric columns
+    df['latitude'] = pd.to_numeric(df['latitude'], errors='coerce')
+    df['longitude'] = pd.to_numeric(df['longitude'], errors='coerce')
+
+    # Clean and reset index
+    df.dropna(subset=['latitude', 'longitude'], inplace=True)
+    df.reset_index(drop=True, inplace=True)
+
+    # Compute individual coverage
+    df['coverage'] = calculate_coverage(df)
+
+    # Save to new CSV
+    df.to_csv(new_data_path, index=False)
+    print(f"Saved data with individual coverage to: {new_data_path}")
+
+# Testing
+def main():
+    current_directory = os.getcwd()
+    url = "https://api.openchargemap.io/v3/poi"
+    data_path = os.path.join(current_directory, "Datasets", "optimized_results.csv")
+    new_data_path = os.path.join(current_directory, "Datasets", "optimized_data_with_covarage.csv")
+
+    # calculate 
+    add_coverage(data_path, new_data_path)
+
+
+if __name__ == "__main__":
+    main()        
+
+

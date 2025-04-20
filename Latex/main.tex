@@ -10,12 +10,9 @@
 \usepackage{longtable}
 \usepackage{array}
 \sloppy
-
-
 \title{Multi-objective Evolutionary Algorithms for Solving the Electric Vehicle Charging Station Infrastructure Problem}
 \author{Harith Elamin}
 \date{May 2025}
-
 \begin{document}
 
 % Title Page
@@ -23,6 +20,10 @@
 
 % Table of Contents
 \tableofcontents
+\newpage
+
+% List of Figures
+\listoffigures
 \newpage
 
 \begin{abstract}
@@ -34,15 +35,15 @@ This thesis explores the use of the multi-objective evolutionary algorithm to op
 \chapter{Introduction}
 The rapid expansion of electric vehicle adoption presents both an opportunity and a challenge for urban transport systems. Electric vehicles have the potential to reduce air pollution and the use of conventional fuels such as diesel and gasoline, but their widespread use requires the establishment of a reliable and accessible charging infrastructure.
 
-Selecting the location of electric vehicle charging stations is a complex problem that involves balancing several conflicting objectives. As electric vehicle adoption continues to increase worldwide, establishing reliable, efficient and accessible infrastructure is becoming increasingly important. A key challenge in this process is identifying the optimal locations for charging stations to meet the needs of electric vehicle users while minimizing associated costs and covering as much area as possible to ensure connectivity.
+Selecting the location of electric vehicle charging stations is a complex problem that involves balancing several conflicting objectives. As electric vehicle adoption continues to increase worldwide, establishing reliable, efficient, and accessible infrastructure is becoming increasingly important. A key challenge in this process is to identify the optimal locations for charging stations to meet the needs of electric vehicle users while minimizing associated costs and covering as much area as possible to ensure connectivity.
 
-Minimizing the overall infrastructure cost is an important goal when selecting the location of charging stations. This includes both direct costs, such as installing and maintaining charging stations, and the costs of users accessing those stations. Reducing costs is a critical aspect of urban planning, so it is essential to ensure that charging stations are strategically distributed to keep costs low while still meeting demand. Efficient distribution plays a key role in balancing affordability and user accessibility.
+Minimizing overall infrastructure costs an important goal when selecting the location of charging stations. This includes both direct costs, such as installing and maintaining charging stations, and the costs of users accessing those stations. Reducing costs is a critical aspect of urban planning, so it is essential to ensure that charging stations are strategically distributed to keep costs low while still meeting demand. Efficient distribution plays a key role in balancing affordability and user accessibility.
 
 In addition to cost considerations, another important factor in determining the location of EV charging stations is minimizing the travel distance for EV users. The availability of charging stations directly affects the possibility of using EVs. Stations should be strategically placed, whether in densely populated urban areas or rural areas where access to charging infrastructure may be limited. Reducing the distance that drivers have to travel to find a charging point is crucial as it enhances the desire of drivers to use EVs. Conversely, long waits at charging stations or difficulty finding a nearby station can be a reason for drivers to avoid using EVs altogether.
 
-Furthermore, the power level of chargers should be considered to minimize charging time. By optimizing the charging power of each station, the overall efficiency of the network can be improved, resulting in faster charging times and a better user experience. This consideration is crucial in ensuring that the charging infrastructure meets the growing demand for EVs while minimizing user wait times.
+Furthermore, the power level of the chargers should be considered to minimize the charging time. By optimizing the charging power of each station, the overall efficiency of the network can be improved, resulting in faster charging times and a better user experience. This consideration is crucial in ensuring that the charging infrastructure meets the growing demand for electric vehicles while minimizing user waiting times.
 
-Moreover, traditional approaches to solving the EVCS location problem typically rely on optimization techniques such as mathematical programming. This approache often focus on single-objective optimization, where only one aspect of the problem is prioritized, such as minimizing cost. While these methods can provide effective solutions in certain scenarios, they often fail when it comes to dealing with trade-offs between multiple objectives, such as cost, coverage, and load balancing. Additionally, traditional optimization techniques can be computationally expensive and time-consuming, especially when the problem involves large urban areas with many potential charging station locations. Multi-objective optimization techniques, such as multi-objective evolutionary algorithms (MOEAs), have emerged as a promising alternative to address the complexity of the EVCS problem. These algorithms are designed to find a variety of solutions that represent different trade-offs between competing objectives. By incorporating multiple objectives into the optimization process, multi-objective evolutionary algorithms can provide decision makers with a broader set of possible solutions, allowing them to choose the solution that best meets the needs of society while balancing the different costs and benefits of charging station placement. These methods are particularly useful when dealing with real-world problems that require the simultaneous optimization of multiple, often conflicting objectives. In short, locating EV charging stations is a complex task that involves addressing different objectives, such as minimizing cost, maximizing coverage, and maximizing charger power to reduce the waiting time. Traditional methods may not be sufficient to handle competing objectives, making multi-objective evolutionary algorithms an attractive solution for optimizing EV charging infrastructure placement.
+Moreover, traditional approaches to solving the EVCS location problem typically rely on optimization techniques such as mathematical programming. This approach often focuses on single-objective optimization, where only one aspect of the problem is prioritized, such as minimizing cost. Although these methods can provide effective solutions in certain scenarios, they often fail when dealing with trade-offs between multiple objectives, such as cost, coverage, and load balancing. In addition, traditional optimization techniques can be computationally expensive and time-consuming, especially when the problem involves large urban areas with many potential charging station locations. Multi-objective optimization techniques, such as multi-objective evolutionary algorithms (MOEAs), have emerged as a promising alternative to address the complexity of the EVCS problem. These algorithms are designed to find a variety of solutions that represent different trade-offs between competing objectives. By incorporating multiple objectives into the optimization process, multi-objective evolutionary algorithms can provide decision makers with a broader set of possible solutions, allowing them to choose the solution that best meets the needs of society while balancing the different costs and benefits of charging station placement. These methods are particularly useful when dealing with real-world problems that require the simultaneous optimization of multiple, often conflicting, objectives. In short, locating electric vehicle charging stations is a complex task that involves addressing different objectives, such as maximizing coverage,  and maximizing the power of the charger to reduce waiting time. Traditional methods may not be sufficient to handle competing objectives, making multi-objective evolutionary algorithms an attractive solution for optimizing EV charging infrastructure placement.
 \section{Motivation}
 The transition to electric vehicles is a key component of sustainable transportation systems, addressing growing concerns about air pollution, climate change, and reliance on conventional fuels such as gasoline and diesel. As EV adoption continues to rise, one of the most pressing challenges is developing an efficient, widely available, and accessible electric vehicle charging station (EVCS) infrastructure. The success of this transition depends largely on optimizing the placement, configuration, and capacity of charging stations to meet the needs of both private and public transportation. However, this task is complicated by the multiple conflicting objectives that must be balanced, such as minimizing costs, maximizing coverage, and minimizing charging time.
 
@@ -92,37 +93,46 @@ Recent work has explored various approaches to solve this problem, including:
 \section{Multi-objective Evolutionary Algorithms}
 Multi-objective evolutionary algorithms are a class of algorithms that are designed to solve optimization problems involving more than one objective. Unlike traditional optimization methods, which aim to find a single optimal solution, MOEAs aim to provide a set of diverse solutions that represent different trade-offs among the objectives \cite{ref5}.
 
-Two of the most widely used MOEAs are:
+One of the most widely used Multi-Objective Evolutionary Algorithms (MOEAs) is:
+
 \begin{itemize}
-    \item \textbf{NSGA-II (Non-dominated Sorting Genetic Algorithm II)}: NSGA-II is a fast and efficient algorithm that uses non-dominated sorting, crowding distance, and elitism to preserve diversity in the population \cite{ref6}.
-    \item \textbf{SPEA2 (Strength Pareto Evolutionary Algorithm 2)}: SPEA2 improves upon its predecessor by introducing an improved fitness assignment strategy and an enhanced archive management technique \cite{ref7}.
+    \item \textbf{NSGA-II (Non-dominated Sorting Genetic Algorithm II)}: NSGA-II is a fast and efficient algorithm that uses non-dominated sorting, crowding distance, and elitism to preserve diversity in the population. It is well-suited for solving complex multi-objective optimization problems and has been widely adopted in both academic and real-world applications \cite{ref6}.
 \end{itemize}
 
-These algorithms have been successfully used in several domains, including engineering design, environmental planning, and transportation systems.
+NSGA-II algorithm has been successfully applied across various domains, including engineering design, environmental planning, and transportation systems.
+
 
 \chapter{Methodology}
 
 \section{Problem Formulation}
 The Electric Vehicle Charging Station(EVCS) infrastructure problem can be formulated as a multi-objective optimization problem with the following decision variables:
 \begin{itemize}
-    \item A set of potential charging station locations, denoted by the set $S = \{s_1, s_2, ..., s_n\}$, where each location is represented by its coordinates $(x_i, y_i)$ in the urban area.
-    \item The charger power at each stand, denoted by $P_i \in \{50, 150, 250\}$ W, where each charger can have one of these power levels at station $i$.
-    \item The cost associated with each charger, denoted by $C_i$, which represents the cost of installing the charger at station $i$.
+    \item A set of candidate charging station locations, denoted as $S = \{s_1, s_2, ..., s_n\}$, where each location $s_i$ is defined by its geographic coordinates $(x_i, y_i)$ within the urban area.
+
+    \item  The power level assigned to chargers at each station, denoted as $P_i \in \{11.5, 14.2, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400\} $~kW, representing the charging speed selected for station $i$ to reduce user waiting time.
+
+    \item The installation cost associated with each charger, denoted by $C_i$, which reflects the total economic expense of deploying a charger at station $i$, considering infrastructure and equipment costs.
+
+    \item The number of charging stations deployed, denoted by $N_s$, which impacts both installation cost and spatial resource usage.
+
+    \item The total number of chargers installed across all stations, denoted by $N_c$, which also contributes to overall cost and infrastructure requirements.
 \end{itemize}
 
-The objectives to be optimized are:
+
+The constraints considered in the optimization model are as follows:
 \begin{itemize}
-     \item \textbf{Coverage}: Maximize the area covered by the charging stations. This objective ensures that a larger portion of the urban area is within reach of the charging stations, reducing travel distance for EV users.
-    \item \textbf{Cost of Charger}: Reduce the overall cost associated with setting up the charging station infrastructure, including charger installation.   
-    \item \textbf{Power Level per Stand}: Minimize the charging time and thus reduce waiting time by increasing the power of each charger at the station.
+    \item The total number of charging stations deployed ($N_s$) must not exceed a predefined upper limit or budget constraint, ensuring feasibility in terms of infrastructure cost and urban space availability.
+
+    \item The total number of chargers installed at each station must respect the station's physical capacity and grid connection limits, and the aggregate charging demand must not exceed this capacity based on both the number of chargers and their power levels ($P_i$).
+
+    \item Each electric vehicle (EV) must be within an acceptable distance from at least one charging station to ensure adequate spatial coverage and accessibility for all users.
+
+    \item The total installation cost, calculated based on the number and type of chargers deployed ($C_i$), must remain within the available budget or funding constraints.
+
+    \item Charger power levels must be selected from the discrete set $\{50, 150, 250\}$~kW, corresponding to standardized fast-charging options.
 \end{itemize}
 
-The constraints include:
-\begin{itemize}
-    \item The total number of charging stations should not exceed a specified budget or maximum number of stations.
-    \item The demand at each station should not exceed its capacity, considering the number of chargers and power levels.
-    \item Each electric vehicle must have access to at least one charging station to ensure accessibility.
-\end{itemize}
+
 
 \section{Multi-objective Evolutionary Algorithm (MOEA) Framework}
 We employ the \textbf{NSGA-II} algorithm, which is  is a multi-objective evolutionary algorithm that applies non-dominated sorting to rank solutions into various fronts \cite{ref8}.
@@ -234,14 +244,14 @@ The performance of the algorithms is evaluated on the following metrics:
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/station_locations.png}
     \caption{stations locations}
-    \label{fig:original_map}
+    \label{fig:OOriginal_map}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/convergence_plot.png}
     \caption{stations locations}
-    \label{fig:original_map}
+    \label{fig:Original_map}
 \end{figure}
 
 \vspace{1cm} %

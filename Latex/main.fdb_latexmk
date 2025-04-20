@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743033746.41661 "c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/main.tex" "main.pdf" "main" 1743033748.31712 0
+["pdflatex"] 1744658343.9997 "c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/main.tex" "main.pdf" "main" 1744658345.48864 0
   "C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1740928507 82347 0a47e4f8d01f5d55a2e12fd68cc2a137 ""
   "C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1742521094 12668 c4ab86dae40b3a3d2df3a6478ac989d5 ""
   "C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1740928513 14064 e20d7470f363981f1b2813f49b093ac0 ""
@@ -102,13 +102,15 @@
   "Figures/optimized_map.PNG" 1742932465 304067 68b423f93489e56ba983c57e3a64e1d5 ""
   "Figures/original_map.PNG" 1742932434 320464 ef80369a5936d5345035d9e59f4ea232 ""
   "Figures/station_locations.png" 1743030609 24013 562533b7554f85c575fc23d5c137fe0a ""
-  "c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/main.tex" 1743033745 27421 5ff51f37bfcd775be8962c284425a1a4 ""
-  "main.aux" 1743033748 5300 eb7ea4d61419185f9af363e1e2cddd9f "pdflatex"
-  "main.out" 1743033748 2699 36721d84c25e2fbe6bd8ab5acfffca22 "pdflatex"
-  "main.tex" 1743033745 27421 5ff51f37bfcd775be8962c284425a1a4 ""
-  "main.toc" 1743033748 1354 fe5f73a642dfa6b68c0dced893244ea3 "pdflatex"
+  "c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/main.tex" 1744658341 28043 cb5f0328102dd1eb71a1cdcd56be417a ""
+  "main.aux" 1744658345 5285 759ce05b55e6516478df5d46b06a9f8d "pdflatex"
+  "main.lof" 1744658345 935 ca9532e7f72a2f32c45ebcc2beba402b "pdflatex"
+  "main.out" 1744658345 2699 36721d84c25e2fbe6bd8ab5acfffca22 "pdflatex"
+  "main.tex" 1744658341 28043 cb5f0328102dd1eb71a1cdcd56be417a ""
+  "main.toc" 1744658345 1354 fe5f73a642dfa6b68c0dced893244ea3 "pdflatex"
   (generated)
   "main.aux"
+  "main.lof"
   "main.log"
   "main.out"
   "main.pdf"
