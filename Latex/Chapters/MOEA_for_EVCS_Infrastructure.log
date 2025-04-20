@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  14 APR 2025 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  20 APR 2025 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/main.tex
-(c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/main.tex
+**c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/Chapters/MOEA_for_EVCS_Infrastructure.tex
+(c:/Users/Lenovo/Documents/GitHub/MOEA/Latex/Chapters/MOEA_for_EVCS_Infrastructure.tex
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-10-09>
 (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -280,12 +280,8 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
 \l__pdf_internal_box=\box63
-) (main.aux
-
-LaTeX Warning: Label `fig:original_map' multiply defined.
-
-)
-\openout1 = `main.aux'.
+) (MOEA_for_EVCS_Infrastructure.aux)
+\openout1 = `MOEA_for_EVCS_Infrastructure.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -325,9 +321,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 16.
- (main.out) (main.out)
+ (MOEA_for_EVCS_Infrastructure.out) (MOEA_for_EVCS_Infrastructure.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `MOEA_for_EVCS_Infrastructure.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
  (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -340,44 +336,46 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc)
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (MOEA_for_EVCS_Infrastructure.toc
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.26 ...}Trade-off Analysis}{21}{subsection.4.4.2}
+                                                  % [1
+
+])
 \tf@toc=\write4
-\openout4 = `main.toc'.
+\openout4 = `MOEA_for_EVCS_Infrastructure.toc'.
 
 
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.23 \newpage
-              [1
-
-] (main.lof)
+[2] (MOEA_for_EVCS_Infrastructure.lof)
 \tf@lof=\write5
-\openout5 = `main.lof'.
+\openout5 = `MOEA_for_EVCS_Infrastructure.lof'.
 
 
 
-[2
+[3
 
-]
+] (abstract.tex
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 \end{abstract}
-                    [1]
+l.6 \end{abstract}
+                   [1])
 Chapter 1.
-
+(intro.tex
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.43 
-      [1
+l.8 
+     [1
 
 ]
 
@@ -385,25 +383,35 @@ l.43
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.49 
+l.16 
       [2]
 
-[3]
 
-[4]
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.26 \begin{itemize}
+                     [3]
+
+[4])
 
 [5]
 Chapter 2.
+(literature.tex
+Underfull \hbox (badness 1062) in paragraph at lines 3--3
+[]\OT1/cmr/bx/n/17.28 Multi-Objective Op-ti-miza-tion of Elec-
+ []
+
 
 
 [6
 
-]
+])
 
 [7]
 Chapter 3.
-
-Overfull \hbox (45.65797pt too wide) in paragraph at lines 112--113
+(methodology.tex
+Overfull \hbox (45.65797pt too wide) in paragraph at lines 6--7
 \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 11\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 14\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 60\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 62\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 80\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 120\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 150\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 180\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 200\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 240\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 250\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 300\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 325\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 350\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 400\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 kW,
  []
 
@@ -412,211 +420,226 @@ Overfull \hbox (45.65797pt too wide) in paragraph at lines 112--113
 [8
 
 ]
-Underfull \hbox (badness 3108) in paragraph at lines 132--133
+Underfull \hbox (badness 3108) in paragraph at lines 26--27
 []\OT1/cmr/m/n/12 Charger power lev-els must be se-lected from the dis-crete set
  []
 
 
+Overfull \hbox (45.65797pt too wide) in paragraph at lines 26--27
+\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 11\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 14\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 60\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 62\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 80\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 120\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 150\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 180\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 200\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 240\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 250\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 300\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 325\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 350\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 400\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 kW,
+ []
+
+)
 
 [9]
 Chapter 4.
-<Figures/original_map.PNG, id=179, 479.7925pt x 288.57813pt>
-File: Figures/original_map.PNG Graphic file (type png)
-<use Figures/original_map.PNG>
-Package pdftex.def Info: Figures/original_map.PNG  used on input line 146.
-(pdftex.def)             Requested size: 312.00119pt x 187.65721pt.
-<Figures/Figure_1.png, id=181, 433.62pt x 289.08pt>
-File: Figures/Figure_1.png Graphic file (type png)
-<use Figures/Figure_1.png>
-Package pdftex.def Info: Figures/Figure_1.png  used on input line 155.
-(pdftex.def)             Requested size: 312.00119pt x 208.0095pt.
+(experiment.tex
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[10
 
-File: Figures/Figure_1.png Graphic file (type png)
-<use Figures/Figure_1.png>
-Package pdftex.def Info: Figures/Figure_1.png  used on input line 165.
-(pdftex.def)             Requested size: 312.00119pt x 208.0095pt.
+]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (5.65508pt too wide) in paragraph at lines 175--175
+[11]
+Overfull \hbox (5.65508pt too wide) in paragraph at lines 50--50
 []|\OT1/cmr/bx/n/10.95 Installation 
  []
 
 
-Overfull \hbox (13.833pt too wide) in paragraph at lines 173--192
+Overfull \hbox (13.833pt too wide) in paragraph at lines 48--67
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[10
-
- <./Figures/original_map.PNG>]
-
-[11 <./Figures/Figure_1.png>]
 
 [12]
+Overfull \hbox (1.60371pt too wide) detected at line 93
+\OML/cmm/m/it/12 f[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 ;  ^^N[] \OT1/cmr/m/n/12 = []
+ []
+
+
 
 [13]
-Chapter 5.
-<Figures/optimized_map.PNG, id=204, 487.32062pt x 286.57062pt>
-File: Figures/optimized_map.PNG Graphic file (type png)
-<use Figures/optimized_map.PNG>
-Package pdftex.def Info: Figures/optimized_map.PNG  used on input line 236.
-(pdftex.def)             Requested size: 312.00119pt x 183.47453pt.
-<Figures/station_locations.png, id=205, 1011.78pt x 722.7pt>
-File: Figures/station_locations.png Graphic file (type png)
-<use Figures/station_locations.png>
-Package pdftex.def Info: Figures/station_locations.png  used on input line 245.
-(pdftex.def)             Requested size: 312.00119pt x 222.85474pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[14]
+<../Figures/stations_with_coverage.PNG, id=261, 475.7775pt x 203.25937pt>
+File: ../Figures/stations_with_coverage.PNG Graphic file (type png)
+<use ../Figures/stations_with_coverage.PNG>
+Package pdftex.def Info: ../Figures/stations_with_coverage.PNG  used on input line 176.
+(pdftex.def)             Requested size: 390.0pt x 166.62103pt.
 
-<Figures/convergence_plot.png, id=206, 462.528pt x 346.896pt>
-File: Figures/convergence_plot.png Graphic file (type png)
-<use Figures/convergence_plot.png>
-Package pdftex.def Info: Figures/convergence_plot.png  used on input line 252.
-(pdftex.def)             Requested size: 312.00119pt x 234.01236pt.
+Underfull \hbox (badness 10000) in paragraph at lines 172--181
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Figures/charger_speed.png, id=207, 1011.78pt x 722.7pt>
-File: Figures/charger_speed.png Graphic file (type png)
-<use Figures/charger_speed.png>
-Package pdftex.def Info: Figures/charger_speed.png  used on input line 261.
-(pdftex.def)             Requested size: 312.00119pt x 222.85474pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: Figures/Figure_1.png Graphic file (type png)
-<use Figures/Figure_1.png>
-Package pdftex.def Info: Figures/Figure_1.png  used on input line 270.
-(pdftex.def)             Requested size: 312.00119pt x 208.0095pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[14
-
- <./Figures/optimized_map.PNG>]
-
-LaTeX Warning: Text page 15 contains only floats.
-
-
-
-[15 <./Figures/station_locations.png> <./Figures/convergence_plot.png>]
-
-[16 <./Figures/charger_speed.png>]
-Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-\OT1/cmr/m/n/12 In the orig-i-nal dataset, there were 92 sta-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-\OT1/cmr/m/n/12 and 91 charg-ers, each with dif-fer-ent power speeds
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-\OT1/cmr/m/n/12 [14\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 11\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 60\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 62\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 80\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 120\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 150\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 180\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 200\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 240\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 250\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 300\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 325\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 350\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 400]$.
- []
 
+[15]
 
-Underfull \hbox (badness 1173) in paragraph at lines 276--277
-\OT1/cmr/m/n/12 Af-ter ap-ply-ing the NSGA-II al-go-rithm, the fol-low-ing ob-jec-tives were
+[16 <../Figures/stations_with_coverage.PNG>]
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
+
  []
 
 
 
-[17
+[18]
 
-]
-Chapter 7.
+[19]
 
-
-[18
-
-]
-
-[19
-
-]
-Underfull \hbox (badness 3209) in paragraph at lines 308--309
-[]\OT1/cmr/m/n/12 DEAP Doc-u-men-ta-tion, "DEAP Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / / deap .
- []
+LaTeX Warning: Citation `Eiben & Smith' on page 20 undefined on input line 287.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
-[]\OT1/cmr/m/n/12 DEAP Doc-u-men-ta-tion, "NSGA-II (NSGA2) in DEAP,"
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
-[]$\OT1/cmtt/m/n/12 https : / / deap . readthedocs . io / en / master / tutorials / faq . html #
- []
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 314--315
-[]\OT1/cmr/m/n/12 Geopy Doc-u-men-ta-tion, "Geopy Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / / geopy .
- []
-
-
-Underfull \hbox (badness 6542) in paragraph at lines 320--321
-[]\OT1/cmr/m/n/12 Requests Doc-u-men-ta-tion, "Re-quests Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-[]\OT1/cmr/m/n/12 Pandas Doc-u-men-ta-tion, "Pan-das DataFrame Ref-er-ence,"
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-[]$\OT1/cmtt/m/n/12 https : / / pandas . pydata . org / pandas-[]docs / stable / reference /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
-[]\OT1/cmr/m/n/12 Open Charge Map, "Open Charge Map API," []$\OT1/cmtt/m/n/12 https :
- []
+LaTeX Warning: Citation `2003' on page 20 undefined on input line 287.
 
 
 
 [20]
+<../Figures/Pareto_Front.png, id=318, 722.7pt x 505.89pt>
+File: ../Figures/Pareto_Front.png Graphic file (type png)
+<use ../Figures/Pareto_Front.png>
+Package pdftex.def Info: ../Figures/Pareto_Front.png  used on input line 316.
+(pdftex.def)             Requested size: 312.00119pt x 218.40073pt.
 
-[21] (main.aux)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `tab:trade-off' on page 21 undefined on input line 323.
+
+<../Figures/Trade_Off.png, id=319, 867.24pt x 722.7pt>
+File: ../Figures/Trade_Off.png Graphic file (type png)
+<use ../Figures/Trade_Off.png>
+Package pdftex.def Info: ../Figures/Trade_Off.png  used on input line 329.
+(pdftex.def)             Requested size: 312.00119pt x 260.00638pt.
+
+
+[21]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+
+[22 <../Figures/Pareto_Front.png>]
+
+[23 <../Figures/Trade_Off.png>]
+Chapter 5.
+(results.tex
+<../Figures/optimized_map.PNG, id=334, 487.32062pt x 286.57062pt>
+File: ../Figures/optimized_map.PNG Graphic file (type png)
+<use ../Figures/optimized_map.PNG>
+Package pdftex.def Info: ../Figures/optimized_map.PNG  used on input line 3.
+(pdftex.def)             Requested size: 312.00119pt x 183.47453pt.
+)
+
+[24
+
+ <../Figures/optimized_map.PNG>]
+Chapter 6.
+(conc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+\OT1/cmr/m/n/12 In the orig-i-nal dataset, there were 92 sta-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+\OT1/cmr/m/n/12 and 91 charg-ers, each with dif-fer-ent power speeds
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+\OT1/cmr/m/n/12 [14\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 11\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 60\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 62\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 80\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 120\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 150\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 180\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 200\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 240\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 250\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 300\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 325\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 350\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 400]$.
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 1--2
+\OT1/cmr/m/n/12 Af-ter ap-ply-ing the NSGA-II al-go-rithm, the fol-low-ing ob-jec-tives were
+ []
+
+)
+
+[25
+
+]
+Chapter 7.
+(ref.tex
+
+[26
+
+]
+Underfull \hbox (badness 3209) in paragraph at lines 24--25
+[]\OT1/cmr/m/n/12 DEAP Doc-u-men-ta-tion, "DEAP Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / / deap .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+[]\OT1/cmr/m/n/12 DEAP Doc-u-men-ta-tion, "NSGA-II (NSGA2) in DEAP,"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+[]$\OT1/cmtt/m/n/12 https : / / deap . readthedocs . io / en / master / tutorials / faq . html #
+ []
+
+
+
+[27
+
+]
+Underfull \hbox (badness 1939) in paragraph at lines 34--35
+[]\OT1/cmr/m/n/12 Geopy Doc-u-men-ta-tion, "Geopy Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / / geopy .
+ []
+
+
+Underfull \hbox (badness 6542) in paragraph at lines 40--41
+[]\OT1/cmr/m/n/12 Requests Doc-u-men-ta-tion, "Re-quests Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+[]\OT1/cmr/m/n/12 Pandas Doc-u-men-ta-tion, "Pan-das DataFrame Ref-er-ence,"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+[]$\OT1/cmtt/m/n/12 https : / / pandas . pydata . org / pandas-[]docs / stable / reference /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+[]\OT1/cmr/m/n/12 Open Charge Map, "Open Charge Map API," []$\OT1/cmtt/m/n/12 https :
+ []
+
+)
+
+[28] (MOEA_for_EVCS_Infrastructure.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-10-09>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 36721D84C25E2FBE6BD8AB5ACFFFCA22;2699.
+Package rerunfilecheck Info: File `MOEA_for_EVCS_Infrastructure.out' has not changed.
+(rerunfilecheck)             Checksum: AFDF11409EDA86BE7D0A9B9AF3EA7F6A;4772.
  ) 
 Here is how much of TeX's memory you used:
- 10454 strings out of 473701
- 160627 string characters out of 5718941
- 559434 words of memory out of 5000000
- 33307 multiletter control sequences out of 15000+600000
- 570181 words of font info for 82 fonts, out of 8000000 for 9000
+ 10554 strings out of 473701
+ 164160 string characters out of 5718941
+ 560676 words of memory out of 5000000
+ 33353 multiletter control sequences out of 15000+600000
+ 571109 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,1976b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (25 pages, 842827 bytes).
+ 75i,10n,79p,2023b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on MOEA_for_EVCS_Infrastructure.pdf (33 pages, 827187 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 483 PDF objects out of 1000 (max. 8388607)
+ 106 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

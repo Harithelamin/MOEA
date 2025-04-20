@@ -1,0 +1,44 @@
+\section{Problem Formulation}
+The Electric Vehicle Charging Station(EVCS) infrastructure problem can be formulated as a multi-objective optimization problem with the following decision variables:
+\begin{itemize}
+    \item A set of candidate charging station locations, indicated as $S = \{s_1, s_2, ..., s_n\}$, where each location $s_i$ is defined by its geographic coordinates $(x_i, y_i)$ within the urban area.
+
+    \item The power level assigned to chargers at each station, denoted by $P_i \in \{11.5, 14.2, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400\}$~kW, represents the charging speed selected for station~$i$ to minimize user waiting time.
+
+    \item The installation cost associated with each charger, denoted by $C_i$, represents the total economic expense of deploying a charger at station~$i$, including infrastructure and equipment costs.
+
+    \item The number of charging stations deployed, denoted by $N_s$, which impacts both installation cost, and the resource usage.
+
+    \item The total number of chargers installed across all stations, denoted by $N_c$, which also contributes to overall cost and infrastructure requirements.
+\end{itemize}
+
+
+The constraints considered in the optimization model are as follows:
+\begin{itemize}
+    \item The total number of charging stations ($N_s$) must not exceed a predefined upper limit or budget constraint, ensuring feasibility in terms of infrastructure cost and urban space availability.
+
+    \item The total number of chargers installed at each station must respect the station's physical capacity and grid connection limits, and the aggregate charging demand must not exceed this capacity based on both the number of chargers and their power levels ($P_i$).
+
+    \item Each electric vehicle (EV) must be within an acceptable distance from at least one charging station to ensure adequate spatial coverage and accessibility for all users.
+
+    \item The total installation cost, calculated based on the number and type of chargers deployed ($C_i$), must remain within the available budget or funding constraints.
+
+    \item Charger power levels must be selected from the discrete set $\{11.5, 14.2, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400\}$~kW, corresponding to standardized fast-charging options.
+\end{itemize}
+
+
+
+\section{Multi-objective Evolutionary Algorithm (MOEA) Framework}
+We employ the \textbf{NSGA-II} algorithm, which is  is a multi-objective evolutionary algorithm that applies non-dominated sorting to rank solutions into various fronts \cite{A Fast and Elitist Multi-objective Genetic Algorithm: NSGA-II}.
+
+Standard genetic operators such as selection, crossover, and mutation are employed within the algorithm. The fitness of each solution is assessed according to the four objectives previously defined: coverage, charger speed, stations number, and chargers number.
+
+\subsection{NSGA0-II Algorithm}
+
+Here we define NSGA-II
+xxxxxxxx
+xxx
+
+
+
+
