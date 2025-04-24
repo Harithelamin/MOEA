@@ -1,10 +1,13 @@
 import os
 import pandas as pd
 
+# The prices inputed manually from US Electirc vihicle page
+#  
+
 # Charger cost calculation
 def calculate_charger_cost(row):
-    if pd.notna(row['power_kw']):
-        power_kw = row['power_kw']
+    if pd.notna(row['charger_speed']):
+        power_kw = row['charger_speed']
         
         # Define cost ranges
         if 3 <= power_kw < 7:
@@ -46,9 +49,9 @@ def calculate_charger_cost(row):
 
 # calculate station cost
 def calculate_station_cost(station_data):
-    if 'charger_cost' in station_data.columns and 'number_of_points' in station_data.columns:
+    if 'charger_cost' in station_data.columns and 'num_chargers' in station_data.columns:
         # Calculate station cost
-        station_data['station_cost'] = station_data['charger_cost'] * station_data['number_of_points']
+        station_data['station_cost'] = station_data['charger_cost'] * station_data['num_chargers']
     else:
         return None
     return station_data
@@ -70,7 +73,7 @@ def calculatin_process(station_data_path):
     station_data = calculate_station_cost(station_data)
 
     # Save the file
-    output_path = os.path.join(current_directory, "Datasets", "station_cost_after_obtimized.csv")
+    output_path = os.path.join(current_directory, "Datasets", "station_cost_before_obtimized.csv")
     station_data.to_csv(output_path, index=False)
       
     print(f"Costs file saved")
@@ -79,7 +82,7 @@ def calculatin_process(station_data_path):
 # Testing
 def main():
     current_directory = os.getcwd()
-    station_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
+    station_data_path = os.path.join(current_directory, "Datasets", "stations.csv")
     calculatin_process(station_data_path)
     
 
