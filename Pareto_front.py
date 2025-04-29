@@ -28,13 +28,13 @@ def plot_pareto_front(pareto_df, save_dir):
     marker_sizes = max_size - (distance_norm * (max_size - min_size)) 
 
     # Create 3D plot
-    fig = plt.figure(figsize=(10, 7))
+    fig = plt.figure(figsize=(12, 8))
     ax = fig.add_subplot(111, projection='3d')
 
-    # num_stations
+    # Add scatter
     scatter = ax.scatter(
         coverage, charger_speed, num_chargers,
-        c=num_stations, cmap='viridis', s=60, alpha=0.8, s=marker_sizes
+        c=num_stations, cmap='viridis', s=marker_sizes, alpha=0.8, edgecolors='k'
     )
 
     ax.set_xlabel('Coverage (maximize)')
