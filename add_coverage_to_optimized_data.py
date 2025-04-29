@@ -2,6 +2,7 @@
 # https://requests.readthedocs.io/en/latest/api/#requests.get
 # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
 # https://openchargemap.org/site/develop/api
+
 import os
 import numpy as np
 import requests

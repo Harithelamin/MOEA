@@ -9,6 +9,8 @@
 # Nagar, S. (2019). Hands-On Genetic Algorithms with Python: Solving Optimization Problems with Python. Packt Publishing.
 
 
+# Vehicel dataset from California city
+# https://data.ca.gov/dataset/vehicle-fuel-type-count-by-zip-code
 
 import os
 import pandas as pd
@@ -33,6 +35,11 @@ import numpy as np
 # 2. Maximize charger speed to reduce waiting time
 # 3. Minimize stations num
 # 4. Minimize chargers num
+# 5. Min avg_distance
+
+
+# 7 Station Accessibility. A lower average distance means EVs are generally close to the station
+# Minimize avg_distance
 
 
 
@@ -56,7 +63,9 @@ class EVCS_Optimization:
         # Maximize charger speed 
         # Minimize stations num
         # Minimize chargers num
-        creator.create("FitnessMulti", base.Fitness, weights=(1.0, 1.0, -1.0, -1.0))  
+        # Minimize average dsitance
+ 
+        creator.create("FitnessMulti", base.Fitness, weights=(1.0, 1.0, -1.0, -1.0, -1.0))
         creator.create("Individual", list, fitness=creator.FitnessMulti)
 
         # Initialize toolbox
@@ -95,6 +104,14 @@ class EVCS_Optimization:
     # Objective 4: Minimize the Number of Chargers
     def calculate_num_chargers(self, stations):
         return sum(self.data.iloc[station]['num_chargers'] for station in stations)
+    
+    # Objective 5: Minimize avarage distance
+    
+    def calculate_avg_ev_distance(self, stations):
+        if not stations:
+            return float('inf')
+        return self.data.iloc[stations]['average_vehicle_distance_km'].mean()
+    
 
     # Define the evaluation function that combines all objectives
     def evaluate(self, individual):
@@ -102,7 +119,8 @@ class EVCS_Optimization:
         charger_speed = self.calculate_charger_speed(individual)
         num_stations = self.calculate_num_stations(individual)
         num_chargers = self.calculate_num_chargers(individual)
-        return coverage, charger_speed, num_stations, num_chargers
+        avg_ev_distance = self.calculate_avg_ev_distance(individual)
+        return coverage, charger_speed, num_stations, num_chargers, avg_ev_distance
 
     # Create a random individual with fewer stations selected
     def create_individual(self):
@@ -195,7 +213,7 @@ class EVCS_Optimization:
                                        data['charger_speed']])
 
         # Create DataFrame as original data, and save to CSV
-        optimized_df = pd.DataFrame(optimized_data, columns=["station_id", "latitude", "longitude", "number_of_points", "charger_speed"])
+        optimized_df = pd.DataFrame(optimized_data, columns=["station_id", "latitude", "longitude", "num_chargers", "charger_speed"])
         optimized_df = optimized_df.drop_duplicates(subset='station_id', keep='first')
         optimized_df.to_csv(self.optimized_data_file, index=False)
 
@@ -204,21 +222,24 @@ class EVCS_Optimization:
     def plot_results(self, pareto_front):
         coverage_values = [ind.fitness.values[0] for ind in pareto_front]
         charger_speed_values = [ind.fitness.values[1] for ind in pareto_front]
+        avg_distance_values = [ind.fitness.values[4] for ind in pareto_front]
 
-        plt.figure(figsize=(6, 4))
-        plt.scatter(coverage_values, charger_speed_values, color='blue')
-        plt.title('Objective 1: Coverage vs Objective 2: Charger Speed')
+        plt.figure(figsize=(8, 5))
+        plt.scatter(coverage_values, charger_speed_values, c=avg_distance_values, cmap='coolwarm', s=50)
+        plt.colorbar(label='Avg EV Distance (km)')
+        plt.title('Coverage vs Charger Speed (colored by Avg EV Distance)')
         plt.xlabel('Coverage (km)')
         plt.ylabel('Charger Speed (kW)')
         plt.grid(True)
         plt.show()
+
 
 def main():
     # Get the current directory
     current_directory = os.getcwd()
 
     # Define the path files
-    data_path = os.path.join(current_directory, "Datasets", "stations.csv")
+    data_path = os.path.join(current_directory, "Datasets", "stations_with_avg_distance.csv")
     optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
 
     # Set hyperparameters    

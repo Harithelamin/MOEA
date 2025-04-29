@@ -25,7 +25,6 @@ def update_vehicle_data_with_coordinates(EV_Registration_data_path, ZIP_code_tab
     
     # Save the dataset
     updated_vehicles.to_csv(vehice_data_with_coordinates, index=False)
-
    
 # Main function
 def main():

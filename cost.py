@@ -61,10 +61,10 @@ def load_data_from_csv(station_data_path):
     return pd.read_csv(station_data_path)
 
 # run calculatin process
-def calculatin_process(station_data_path):
+def calculatin_process(data, output ):
     current_directory = os.getcwd()
     # Load the data
-    station_data = load_data_from_csv(station_data_path)
+    station_data = load_data_from_csv(data)
 
     # Calculate charger cost
     station_data['charger_cost'] = station_data.apply(calculate_charger_cost, axis=1)
@@ -72,18 +72,29 @@ def calculatin_process(station_data_path):
     # Calculate station cost
     station_data = calculate_station_cost(station_data)
 
-    # Save the file
-    output_path = os.path.join(current_directory, "Datasets", "station_cost_before_obtimized.csv")
-    station_data.to_csv(output_path, index=False)
+    # Save the file   
+    station_data.to_csv(output, index=False)
       
     print(f"Costs file saved")
+
+
+def get_cost_before_optimizing(data, output):
+    calculatin_process(data, output)
+
+def get_cost_after_optimizing(data,output):
+    calculatin_process(data, output)
+
 
 
 # Testing
 def main():
     current_directory = os.getcwd()
-    station_data_path = os.path.join(current_directory, "Datasets", "stations.csv")
-    calculatin_process(station_data_path)
+    original_data_path = os.path.join(current_directory, "Datasets", "stations.csv")
+    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
+    Original_output_path = os.path.join(current_directory, "Datasets", "station_cost_before_obtimized.csv")
+    Optimized_path = os.path.join(current_directory, "Datasets", "station_cost_after_obtimized.csv")
+    get_cost_before_optimizing(original_data_path, Original_output_path)
+    get_cost_after_optimizing(optimized_data_path, Optimized_path)
     
 
 

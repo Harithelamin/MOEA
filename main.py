@@ -45,17 +45,24 @@ import cost
 # 2: Cost: Minimize the cost of setting up the infrastructure for the charging stations.
 # 3. Power Level: Maximize the power level of the stations to improve charging efficiency and reduce waiting times.
 # 4. Charging Speed (Efficiency) Maximize the speed of the charging stations, considering faster charging options
+# 5.
+
 
 # 5: wait time
 # daset
-# 1. statitons dataset
+# 1. EVCtatitons dataset
 # https://openchargemap.org
 # "key": "65480684-8133-4ba5-9289-949cc656022d"
 # run station.py 
 
 
-# Cost dataset sources:
+# 2. Cost dataset sources:
 #   https://theicct.org/wp-content/uploads/2021/06/ICCT_EV_Charging_Cost_20190813.pdf
+
+# 3. EVs dataset from California city
+# https://data.ca.gov/dataset/vehicle-fuel-type-count-by-zip-code
+
+
 #1. U.S. Department of Energy (EVSE Report)
 #2. Electrify America - Real Charging Stations
 #3. Tesla Supercharger Information

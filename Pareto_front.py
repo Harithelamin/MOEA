@@ -8,6 +8,7 @@ import pandas as pd
 # 2. Maximize charger speed to reduce waiting time
 # 3. Minimize stations num
 # 4. Minimize chargers num
+# 5. Minimize avarage distance
 
 def plot_pareto_front(pareto_df, save_dir):
     pareto_df['num_stations'] = pareto_df.apply(lambda row: len(str(row['station_id']).split(',')), axis=1)
@@ -17,6 +18,14 @@ def plot_pareto_front(pareto_df, save_dir):
     num_chargers = pareto_df["num_chargers"]
     coverage = pareto_df["coverage"]
     charger_speed = pareto_df["charger_speed"]
+    avg_vehicle_distance = pareto_df["average_vehicle_distance_km"]
+
+    # We need to normalize average distance
+    min_size = 30
+    max_size = 200
+    distance_norm = (avg_vehicle_distance - avg_vehicle_distance.min()) / (avg_vehicle_distance.max() - avg_vehicle_distance.min())
+    # we need it in the scatter
+    marker_sizes = max_size - (distance_norm * (max_size - min_size)) 
 
     # Create 3D plot
     fig = plt.figure(figsize=(10, 7))
@@ -25,7 +34,7 @@ def plot_pareto_front(pareto_df, save_dir):
     # num_stations
     scatter = ax.scatter(
         coverage, charger_speed, num_chargers,
-        c=num_stations, cmap='viridis', s=60, alpha=0.8
+        c=num_stations, cmap='viridis', s=60, alpha=0.8, s=marker_sizes
     )
 
     ax.set_xlabel('Coverage (maximize)')
