@@ -55,7 +55,7 @@ def add_coverage(data_path, new_data_path):
 def main():
     current_directory = os.getcwd()
     url = "https://api.openchargemap.io/v3/poi"
-    data_path = os.path.join(current_directory, "Datasets", "optimized_results.csv")
+    data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
     new_data_path = os.path.join(current_directory, "Datasets", "optimized_data_with_covarage.csv")
 
     # calculate 
