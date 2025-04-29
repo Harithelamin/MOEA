@@ -193,6 +193,7 @@ class EVCS_Optimization:
                 station_id = station_data['station_id']
                 latitude = station_data['latitude']
                 longitude = station_data['longitude']
+                average_vehicle_distance_km= station_data['average_vehicle_distance_km']
                 charger_speed = station_data['charger_speed']
 
                 if station_id not in selected_stations:
@@ -200,7 +201,8 @@ class EVCS_Optimization:
                         'latitude': latitude,
                         'longitude': longitude,
                         'charger_speed': charger_speed,
-                        'num_points': 1
+                        'num_points': 1,
+                        'average_vehicle_distance_km':average_vehicle_distance_km
                     }
                 else:
                     selected_stations[station_id]['num_points'] += 1
@@ -210,10 +212,11 @@ class EVCS_Optimization:
                                        data['latitude'],
                                        data['longitude'],
                                        data['num_points'],
-                                       data['charger_speed']])
+                                       data['charger_speed'],
+                                       data['average_vehicle_distance_km']])
 
         # Create DataFrame as original data, and save to CSV
-        optimized_df = pd.DataFrame(optimized_data, columns=["station_id", "latitude", "longitude", "num_chargers", "charger_speed"])
+        optimized_df = pd.DataFrame(optimized_data, columns=["station_id", "latitude", "longitude", "num_chargers", "charger_speed", "average_vehicle_distance_km"])
         optimized_df = optimized_df.drop_duplicates(subset='station_id', keep='first')
         optimized_df.to_csv(self.optimized_data_file, index=False)
 
