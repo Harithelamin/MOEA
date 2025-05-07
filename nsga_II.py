@@ -83,14 +83,24 @@ class EVCS_Optimization:
     # Define objectives
     # Objective 1: Maximize Coverage
     def calculate_coverage(self, stations):
+        # Define  coverage radius sa 5 km
+        coverage_radius_km = 5  
         coverage = 0
-        for i in range(len(stations)):
-            for j in range(i + 1, len(stations)):
-                station1 = self.data.iloc[stations[i]]
-                station2 = self.data.iloc[stations[j]]
-                distance = geodesic((station1['latitude'], station1['longitude']),
-                                    (station2['latitude'], station2['longitude'])).km
-                coverage += distance
+
+        # Get coordinates of selected stations
+        selected_stations = self.data.iloc[stations][['latitude', 'longitude']].values
+
+        # Check each EV point for coverage
+
+        for _, ev_point in self.data.iterrows():
+                ev_location = (ev_point['latitude'], ev_point['longitude'])
+
+                # Count this EV if it close to any selected station
+                if any(
+                    geodesic(ev_location, (station_lat, station_lon)).km <= coverage_radius_km
+                    for station_lat, station_lon in selected_stations
+                ):
+                    coverage += 1
         return coverage
 
     # Objective 2: Maximize Charger Speed
@@ -181,6 +191,7 @@ class EVCS_Optimization:
 
         # Plot results
         self.plot_results(pareto_front)
+        #self.plot_all_solutions_with_ranks(self.population)
 
     def save_optimized_data(self, pareto_front):
         optimized_data = []
@@ -237,6 +248,34 @@ class EVCS_Optimization:
         plt.show()
 
 
+    def plot_all_solutions_with_ranks(self, population, filename='plot_all_solutions_with_ranks.png'):
+        # Extract coverage, charger speed, and average distance values from the entire population
+        coverage_values = [ind.fitness.values[0] for ind in population]
+        charger_speed_values = [ind.fitness.values[1] for ind in population]
+        avg_distance_values = [ind.fitness.values[4] for ind in population]
+
+        # Extract ranks for each individual in the population
+        ranks = [ind.rank for ind in population]  # Rank should be assigned in the population
+
+        # Create a scatter plot with color based on rank
+        plt.figure(figsize=(8, 5))
+        scatter = plt.scatter(coverage_values, charger_speed_values, c=ranks, cmap='viridis', s=50)
+
+        # Add color bar for ranks
+        cbar = plt.colorbar(scatter)
+        cbar.set_label('Pareto Rank')
+
+        # Labels and title
+        plt.title('Coverage vs Charger Speed (colored by Pareto Rank)')
+        plt.xlabel('Coverage (km)')
+        plt.ylabel('Charger Speed (kW)')
+        plt.grid(True)
+
+        # Save the plot to a file
+        plt.savefig(filename)
+
+        # Show plot
+        plt.show()
 def main():
     # Get the current directory
     current_directory = os.getcwd()
