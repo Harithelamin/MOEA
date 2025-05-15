@@ -22,8 +22,9 @@ You can install the required libraries using `pip`. Here is a sample installatio
 
 ```bash
 pip install pandas numpy matplotlib scikit-fuzzy seaborn scikit-learn nbimporter
+```
 
-# Results
+### Results
 ![alt text](Latex/Figures/evcs-nsga-flowchart.png)
 ![alt text](Latex/Figures/EVC_Levels.png)
 ![alt text](Latex/Figures/Pareto_Front.png)
@@ -38,7 +39,3 @@ pip install pandas numpy matplotlib scikit-fuzzy seaborn scikit-learn nbimporter
 ![alt text](Latex/Figures/plot_EVCS_cost.png)
 
 
-
-
-
-```
