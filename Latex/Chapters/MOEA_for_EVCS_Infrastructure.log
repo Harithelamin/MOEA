@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  15 MAY 2025 05:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  15 MAY 2025 06:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,7 +549,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box75
-) (MOEA_for_EVCS_Infrastructure.aux)
+)
+No file MOEA_for_EVCS_Infrastructure.aux.
 \openout1 = `MOEA_for_EVCS_Infrastructure.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -570,7 +571,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
- (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count339
 \scratchdimen=\dimen288
@@ -660,27 +661,19 @@ No file MOEA_for_EVCS_Infrastructure.lof.
 [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
- (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
- (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9 
-     [1]
+l.11     O
+          verall, the NSGA-II approach proved effective in generating a dive... [1]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.11     \end{abstract}
+l.12     \end{abstract}
                         [2])
 Chapter 1.
 (intro.tex
@@ -758,6 +751,14 @@ Package natbib Warning: Citation `Alternative Fuels Data Center' on page 8 undef
 
 Package natbib Warning: Citation `Alternative Fuels Data Center' on page 9 undefined on input line 42.
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
+(C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
+ (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 Package natbib Warning: Citation `Alternative Fuels Data Center' on page 9 undefined on input line 65.
 
@@ -767,7 +768,7 @@ Package natbib Warning: Citation `Alternative Fuels Data Center' on page 9 undef
 
 Package natbib Warning: Citation `Alternative Fuels Data Center' on page 10 undefined on input line 67.
 
-<../Figures/EV_connecters.PNG, id=74, 542.025pt x 265.99374pt>
+<../Figures/EV_connecters.PNG, id=73, 542.025pt x 265.99374pt>
 File: ../Figures/EV_connecters.PNG Graphic file (type png)
 <use ../Figures/EV_connecters.PNG>
 Package pdftex.def Info: ../Figures/EV_connecters.PNG  used on input line 74.
@@ -781,7 +782,7 @@ Package natbib Warning: Citation `Alternative Fuels Data Center' on page 10 unde
 
 Package natbib Warning: Citation `U.S. Department of Transportation' on page 11 undefined on input line 80.
 
-<../Figures/EVC_Levels.png, id=82, 362.007pt x 267.618pt>
+<../Figures/EVC_Levels.png, id=81, 362.007pt x 267.618pt>
 File: ../Figures/EVC_Levels.png Graphic file (type png)
 <use ../Figures/EVC_Levels.png>
 Package pdftex.def Info: ../Figures/EVC_Levels.png  used on input line 84.
@@ -1551,17 +1552,17 @@ Package rerunfilecheck Info: Checksums for `MOEA_for_EVCS_Infrastructure.out':
 (rerunfilecheck)             After:  9B2459992DA7938C7261A8211B7D4F66;12089.
  ) 
 Here is how much of TeX's memory you used:
- 32638 strings out of 473701
- 771214 string characters out of 5718941
+ 32635 strings out of 473701
+ 771052 string characters out of 5718941
  1252650 words of memory out of 5000000
- 54913 multiletter control sequences out of 15000+600000
+ 54912 multiletter control sequences out of 15000+600000
  568509 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,1371b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on MOEA_for_EVCS_Infrastructure.pdf (82 pages, 1130969 bytes).
+Output written on MOEA_for_EVCS_Infrastructure.pdf (82 pages, 1131291 bytes).
 PDF statistics:
- 739 PDF objects out of 1000 (max. 8388607)
+ 740 PDF objects out of 1000 (max. 8388607)
  267 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
