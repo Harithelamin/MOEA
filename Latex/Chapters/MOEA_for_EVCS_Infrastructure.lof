@@ -20,6 +20,7 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces EVCS locations before optimization.}}{58}{figure.6.8}%
 \contentsline {figure}{\numberline {6.9}{\ignorespaces EVCS locations after optimization.}}{59}{figure.6.9}%
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Average distance from EVs to their nearest EVCS before and after optimization.}}{60}{figure.6.10}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Network cost comparison before and after NSGA-II optimization.}}{62}{figure.6.11}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Optimized EVCS layout highlighting fast charger placement in high demand areas.}}{61}{figure.6.11}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Network cost comparison before and after NSGA-II optimization.}}{63}{figure.6.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

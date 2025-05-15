@@ -56,13 +56,13 @@
 \contentsline {subsection}{\numberline {6.3.1}Minimizing the Number of Stations and Chargers}{54}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Maximizing Charger Speed}{55}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}Maximizing Coverage and Minimizing Average Distance}{57}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Minimizing Overall EVCS Infrastructure Costs}{61}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Discussion}{63}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Optimization of Coverage and Accessibility}{63}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Charger Speed and reducing the waiting time }{64}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Minimizing Infrastructure Costs: Number of Stations and Chargers}{64}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Minimization of the average distance between electric vehicles and nearest charging stations}{65}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}5. Trade-offs and Practical Implications}{66}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}6. NSGA-II Algorithm Effectiveness}{66}{section.7.4}%
-\contentsline {section}{\numberline {7.5}7. Limitations and Future Work}{67}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Conclusion}{68}{chapter.8}%
+\contentsline {section}{\numberline {6.4}Minimizing Overall EVCS Infrastructure Costs}{62}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Discussion}{64}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Optimization of Coverage and Accessibility}{64}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Charger Speed and reducing the waiting time }{65}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Minimizing Infrastructure Costs: Number of Stations and Chargers}{65}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Minimization of the average distance between electric vehicles and nearest charging stations}{66}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}5. Trade-offs and Practical Implications}{67}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}6. NSGA-II Algorithm Effectiveness}{67}{section.7.4}%
+\contentsline {section}{\numberline {7.5}7. Limitations and Future Work}{68}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Conclusion}{69}{chapter.8}%
