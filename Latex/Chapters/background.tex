@@ -13,18 +13,26 @@ Moreover, gasoline and diesel vehicles can be developed to handle large amounts 
 There are generally three levels of EV chargers:
 \begin{itemize}
     \item \textbf{AC Level 1 Charging:} Level 1 charging is the most basic method to charge an electric vehicle (EV). It uses a standard 120-volt household outlet. This charger level is often used when no other higher voltage charging options are available. Although this type of charger is very slow, it is still practical for many drivers, especially those who drive short distances every day. Level 1 charging is simple and requires no installation. Most electric cars come with a Level 1 charging cable that can be plugged directly into a household electrical outlet.
-    Moreover, Level 1 charging meets simple daily needs. For example, charging an electric car for 8 hours increases its driving range to approximately 64 kilometers (40 miles). This is sufficient for normal daily driving. Overall, Level 1 charging may not be ideal for long-distance travel, but for many EV owners, it offers a cost effective and easy way to charge at home without needing extra equipment\cite{Alternative Fuels Data Center}.
+    Moreover, Level 1 charging meets simple daily needs whcih typically delivering up to 3 kW of power using a standard 3-pin domestic plug \cite{RAC}.   
+    
+    For example, charging an electric car for 8 hours increases its driving range to approximately 64 kilometers (40 miles). This is sufficient for normal daily driving. Overall, Level 1 charging may not be ideal for long-distance travel, but for many EV owners, it offers a cost effective and easy way to charge at home without needing extra equipment\cite{Alternative Fuels Data Center}.
+
+    
+
+
 
         
-    \item \textbf{AC Level 2 Charging:} Level 2 charging provides electric vehicle (EV) charging through a 240 volt electrical supply in residential settings, or 208 volts in commercial environments\cite{Alternative Fuels Data Center}. Unlike Level 1 charging, which uses a standard 120V outlet and charges slowly, Level 2 significantly reduces charging time, making it a popular choice for both home and public use. Level 2 charging is much faster than Level 1, using a 220V outlet instead of the standard 120V\cite{Alternative Fuels Data Center}. This significantly reduces charging time, making it a popular choice for both home and public use. One of the main benefits of Level 2 charging is its ability to fully charge a typical EV battery overnight. This makes it ideal for daily use.
+    \item \textbf{AC Level 2 Charging:} Level 2 charging provides electric vehicle (EV) charging through a 240 volt electrical supply in residential settings, or 208 volts in commercial environments\cite{Alternative Fuels Data Center}. Unlike Level 1 charging, which uses a standard 120V outlet and charges slowly, Level 2 significantly reduces charging time, making it a popular choice for both home and public use. Level 2 charging is much faster than Level 1, using a 220V outlet instead of the standard 120V\cite{Alternative Fuels Data Center}, and chargers speed in range from 7 kW to 22 kW \cite{RAC}. This significantly reduces charging time, making it a popular choice for both home and public use. One of the main benefits of Level 2 charging is its ability to fully charge a typical EV battery overnight. This makes it ideal for daily use.
 
-    However, Level 2 equipment is also widely used at public stations, workplaces, and shopping centers to support EV users. Overall, Level 2 charging offers a good balance between speed and efficiency, making it the preferred choice for many EV users.
+
     
     \item \textbf{DC Fast Charging:} Level 3 charging operates at around 400 volts, allowing electric vehicles (EVs) to charge significantly faster than with standard Level 1 or Level 2 charging\cite{DC Fast Chargers for Electric Vehicles}.   
     
     
-    This technology provide up to 500 kilowatts (kW) of power, making it ideal for busy highways and transportation routes where fast charging is crucial\cite{Alternative Fuels Data Center}.
+    This technology provide 50 kW and up to 500 kilowatts (kW) of power \cite{Lifewire}, making it ideal for busy highways and transportation routes where fast charging is crucial\cite{Alternative Fuels Data Center}.
     In addition, DC fast charging stations are especially useful for long-distance travel and commercial applications, as they can recharge an EV battery to 80\% in as little as 20–30 minutes, depending on the vehicle and charger capacity\cite{Alternative Fuels Data Center}.
+
+    Level 3 chargers, also known as rapid or ultra-rapid chargers, provide 50 kW or more, using direct current (DC) to enable high-speed charging. These chargers are typically installed at commercial or public charging stations and are ideal for quick top-ups during travel (Lifewire, 2024).
 
     The growing adoption of medium and heavy duty electric vehicles (EVs) such as electric buses, delivery vans, and heavy trucks increased demand for DC fast charging infrastructure. These vehicles have larger batteries, which requiring higher charging capacities. 
     
@@ -178,11 +186,32 @@ According \cite{IEEE Transactions on Evolutionary Computation} , NSGA-II introdu
     \item \textbf{Elitism:} Retains the best solutions of individuals across generations, ensuring that the quality of the population improves over time.
 \end{itemize}
 
-The algorithm can be summarized in the following steps \cite{IEEE Transactions on Evolutionary Computation}:
+The algorithm can be summarized in the following steps \cite{IEEE Transactions on Evolutionary Computation}, \cite{deb2002nsga2}:
 
-\begin{enumerate} \item Combine the parent and offspring populations into one single population. \item Rank the combined population by non-dominance, categorizing solutions into different levels. \item Select the best individuals based on crowding distance, ensuring diversity is preserved, until the next generation is complete. \item Apply variation operators (crossover and mutation) to generate offspring for the subsequent generation. \end{enumerate}
-
-
-In addition, NSGA-II is computationally efficient, with a time complexity of \(O(MN^2)\), where \(M\) is the number of objectives and \(N\) is the population size \cite{IEEE Transactions on Evolutionary Computation}. Its ability to balance convergence and diversity makes it highly suitable for solving complex multi objective problems, such as Electric Vehicle Charging Station (EVCS) optimization. This matches well with the objectives of this research, which are to maximize coverage, maximize charger speed to reduce waiting times, minimize the number of stations, minimize the number of chargers, and minimize the average distance to stations. NSGA-II explores a variety of possible charging solutions and converges toward Pareto-optimal solutions, effectively addressing the trade-offs between these conflicting objectives. By efficiently handling these goals, NSGA-II proves to be a powerful tool for optimizing the design of EVCS, Ensuring efficiency and coverage while reducing wait times and lowering overall costs.
-
+\begin{enumerate}
+    \item \textbf{Initialization:} Generate an initial population of solutions randomly within the defined decision space.
+    
+    \item \textbf{Evaluation:} Evaluate the objective function values for each individual in the population.
+    
+    \item \textbf{Non-dominated Sorting:} Sort the population into different non-dominated fronts based on Pareto dominance.
+    
+    \item \textbf{Crowding Distance Calculation:} Compute the crowding distance for each individual to estimate the density of solutions surrounding it.
+    
+    \item \textbf{Selection:} Select parents for reproduction using binary tournament selection based on rank (non-dominance level) and crowding distance.
+    
+    \item \textbf{Crossover and Mutation:} Apply genetic operators such as crossover and mutation to generate a new set of offspring.
+    
+    \item \textbf{Combination:} Combine the parent and offspring populations to form a new population.
+    
+    \item \textbf{Replacement:} Perform non-dominated sorting on the combined population, and select the best individuals based on rank and crowding distance to form the next generation. Repeat from Step 2 until the termination criterion is met.
+\end{enumerate}
+\newpage
+Figure~\ref{fig:nsga_flowchart} illustrates the complete process of the NSGA-II algorithm~\cite{deb2002nsga2}. It begins with the initialization of a random population and the evaluation of objective functions. Then, non-dominated sorting and crowding distance calculation are applied to guide the selection process. Finally, crossover and mutation operators generate offspring, and the process repeats for each generation.
+\begin{figure}[h]
+    \centering    \includegraphics[width=0.8\textwidth]{../Figures/nsga-flowchart.PNG}
+    \caption{Flowchart of the NSGA-II algorithm.}
+    \label{fig:nsga_flowchart}
+\end{figure}
+\\
+In addition, NSGA-II is computationally efficient, with a time complexity of \(O(MN^2)\), where \(M\) is the number of objectives and \(N\) is the population size \cite{IEEE Transactions on Evolutionary Computation}.NSGA-II is a suitable method for solving complex multi-objective problems because it maintains a good balance between finding high quality solutions (convergence) and keeping a wide variety of options (diversity). This makes it a practical choice for optimizing Electric Vehicle Charging Station (EVCS) networks, which is the main focus of this study. The optimization goals include minimizing the number of stations, minimizing the number of chargers, and reducing the average distance to charging stations. By exploring a wide range of possible solutions and identifying a set of well-balanced outcomes (Pareto-optimal solutions), NSGA-II helps manage the trade-offs between these conflicting objectives. This approach supports the design of efficient and accessible EVCS networks, helping to reduce wait times, improve coverage, and lower overall costs \cite{Multi-Objective Optimization using Evolutionary Algorithms}.
 

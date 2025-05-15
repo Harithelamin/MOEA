@@ -1,12 +1,7 @@
-In the original dataset, there were 92 stations and 91 chargers, each with different power speeds \([14.2, 11.5, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400]\). After applying the NSGA-II algorithm, the following objectives were addressed:
+The results from the NSGA-II optimization process reveal the complexity of the Electric Vehicle Charging Station (EVCS) deployment problem. By considering five key objectives—maximizing coverage, maximizing charger speed, minimizing the number of stations, minimizing the number of chargers, and minimizing the average distance between electric vehicles (EVs) and their nearest charging station—the optimization process provides a set of Pareto-optimal solutions that represent the trade-offs between these conflicting objectives. The use of NSGA-II enabled the exploration of the solution space, resulting in a diverse range of solutions that balance infrastructure cost, service quality, and accessibility.
 
-\begin{enumerate}
-    \item Maximize coverage.
-    \item Maximize the speed of the charger to reduce the waiting time.
-    \item Minimize the number of stations.
-    \item Minimize the number of chargers.
-\end{enumerate}
+The Pareto front obtained from the optimization illustrates that there is no single best solution. Instead, decision-makers can select the optimal solution based on their specific priorities, whether it be improving coverage, reducing infrastructure costs, or enhancing service accessibility. This flexibility highlights the importance of considering all relevant factors when planning the deployment of EV charging infrastructure.
 
-The aim was to develop a solution that finds a balance between these objectives.
+Through the optimization process, we achieved a significant reduction in infrastructure costs, with the number of stations decreasing from 92 to 66 and the number of chargers reducing from 91 to 81, while maintaining a high level of service. Optimizing station locations ensured optimal coverage, and reducing the number of stations and chargers per station helped reduce associated costs. The trade-offs identified in the results underscore the need for careful planning in the deployment of EVCS to ensure an effective balance between coverage, cost, and accessibility.
 
-As a result, the optimization process led to a reduction in the number of stations to 66 and a decrease in the number of chargers to 81. In general, optimizing station locations ensured the best possible coverage, while reducing the number of stations and chargers per station contributed to a decrease in associated costs.
+In conclusion, the application of NSGA-II for EVCS optimization offers valuable insights into the trade-offs that must be considered when deploying charging networks. The findings suggest that the optimization process can lead to cost-effective and efficient deployment strategies, ensuring that electric vehicle users have access to high-quality charging services without incurring excessive infrastructure costs. The methodology can serve as a basis for future studies and practical implementations of EVCS networks, supporting the transition to a more sustainable transportation ecosystem.

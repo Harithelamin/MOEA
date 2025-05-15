@@ -3,4 +3,9 @@
     
     This thesis explores the use of the multi-objective evolutionary algorithm to optimize the placement and configuration of electric vehicle charging stations (EVCS). The goal is to find a solution that maximizes the geographic area covered by EV charging stations, minimizes the cost of setting up the infrastructure, and maximizes the power level of the stations to improve charging efficiency and reduce waiting times. By applying MOOP, such as the NSGA-II algorithm, we demonstrate the potential of evolutionary algorithms to address the complexities of EV charging station layout in an urban environment. The results show that NSGA-II provides an efficient and versatile solution to the challenges of the electric vehicle charging station infrastructure.
     
-\end{abstract}
+    The NSGA-II algorithm successfully identified a set of optimized EVCS infrastructure layouts that balance multiple competing objectives. Results show a substantial reduction in total network cost from $61.21 million to $21.22 million a decrease of approximately 65\% achieved by reducing the number of EVCS from 91 to 65 and the number of EVC from 217 to 69. 
+    
+    However, since this study employed a multi-objective optimization approach, the algorithm had to balance several competing goals rather than optimizing a single objective in isolation. As a result, coverage per station did not improve as expected. In fact, the optimized solution led to a decrease in average coverage, from 196,134.50 to 112,972.43. This decline reflects the trade-offs made in favor of other objectives—particularly the goal of minimizing the average distance between electric vehicles (EVs) and the nearest charging station. In this regard, the solution was successful, as the average user travel distance decreased from 2,357 km to 2,131 km, enhancing accessibility and reducing user inconvenience.
+    
+    Overall, the NSGA-II approach proved effective in generating a diverse set of viable trade-offs, supporting the development of cost-effective, scalable, and user-oriented EV charging infrastructure.
+    \end{abstract}

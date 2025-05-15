@@ -1,4 +1,4 @@
-# Reference
+# The code reference
 # For Genetic, and NSGA-II algorithm.
 # DEAP Documentation: https://deap.readthedocs.io/en/master/
 # NSGA-II (NSGA2) in DEAP: https://deap.readthedocs.io/en/master/tutorials/faq.html#how-can-i-use-nsga2
@@ -17,14 +17,21 @@
 # For visualization.
 # Official documentation for Matplotlib, which is used for creating plots.
 # Link: https://matplotlib.org/stable/contents.html
+
+
+
 import os
+from matplotlib.pyplot import plot
 import pandas as pd
-from analyes import trade_off_plots
+import add_coverage_to_optimized_data
+import add_distance_to_optimized_data
 from nsga_II import EVCS_Optimization
-import plot
-print(dir(plot))
+import nsga_II
 import stations 
-import cost
+import calculate_evcs_cost
+import update_vehicles_with_coord
+import add_coverage_to_station_data
+import add_distance_to_stations_data
 
 
 
@@ -38,14 +45,26 @@ import cost
 # 3. Cost and Benefit Analysis
 # 4. Energy Consumption Efficiency
 
+
+
+# Define the objectives problem 
+# 1. Maximize coverage
+# 2. Maximize charger speed to reduce waiting time
+# 3. Minimize stations num
+# 4. Minimize chargers num
+# 5. Min avg_distance
+
+
+
+
 # visualize the Pareto front.
 
-# Define the objectives
-# 1. Coverage: Maximize the geographic area covered by EV charging stations.
-# 2: Cost: Minimize the cost of setting up the infrastructure for the charging stations.
-# 3. Power Level: Maximize the power level of the stations to improve charging efficiency and reduce waiting times.
-# 4. Charging Speed (Efficiency) Maximize the speed of the charging stations, considering faster charging options
-# 5.
+# Define the objectives problem 
+# 1. Maximize coverage
+# 2. Maximize charger speed to reduce waiting time
+# 3. Minimize stations num
+# 4. Minimize chargers num
+# 5. Min avg_distance
 
 
 # 5: wait time
@@ -76,84 +95,32 @@ import cost
 
 
 def main():
-    # stations url path
-    url = "https://api.openchargemap.io/v3/poi"
-    # Path to the dataset
-    current_directory = os.getcwd()
-    data_path = os.path.join(current_directory, "Datasets", "stations.csv")
-    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data.csv")
-    original_map_path = os.path.join(current_directory, "Figures")
-    optimized_map_path = os.path.join(current_directory, "Figures")
-    output_directory = os.path.join(current_directory, "Figures")
+    print("Fetching station data, and preprocessing it...")
+    stations.main 
 
+    print("Fetching EV data, and preprocessing it...")
+    update_vehicles_with_coord.main 
 
+    print("Add coverage to original station data...")
+    add_coverage_to_station_data.main
 
-    # Set hyperparameters    
-    parms = {
-        'population_size': 100,
-        'generations': 50,
-        'mu': 50,
-        'lambda_': 100,
-        'cxpb': 0.7,
-        'mutpb': 0.2,
-        'data_file': data_path,
-        'optimized_data_file': optimized_data_path
-    }
+    print("Add distance to original station data...")
+    add_distance_to_stations_data.main
 
-    print("Fetching station data...")
-    #stations.get_stations_data(url, data_path)  
+    print("Run NSGA-II to Optimization EVCS...")
+    nsga_II.main
 
-    print("Calcuate the cost for original data...")
-    #cost.calculatin_process(data_path)
+    print("Add coverage to optimized data...")
+    add_coverage_to_optimized_data.main
+
+    print("Add distance to optimized  data...")
+    add_distance_to_optimized_data.main
+    
+    print("Calculate Originla EVCS Network...")
+    print("Calculate Optimized EVCS Network...")
+    calculate_evcs_cost.main
 
     
-    print("Calcuate the cost for obtimized data...")
-    #cost.calculatin_process(data_path)
-
-    # Create the EVCS_Optimization object
-    optimization = EVCS_Optimization(parms)
-
-    # Run the optimization
-    optimization.run()
-
-    # plot to visualize the results
-
-    print("Plot the results...")
-
-    plot.plot_results(optimization.population, optimized_map_path) 
-    # 
-    plot.plot_map(data_path, original_map_path) 
-    plot.plot_map(optimized_data_path, optimized_map_path) 
-
-
-    # Load the optimized data (Pareto front)
-    def load_optimized_data(file_path):
-        return pd.read_csv(file_path)
-
-    # Load optimized data (Pareto front)
-    pareto_front = load_optimized_data(optimized_data_path)
-
-    #print(pareto_front)
-    # Define the path to save the convergence plot
-    convergence_plot_path = os.path.join(output_directory, 'convergence_plot.png')
-    objective_distribution_path =os.path.join(current_directory, "objective_distribution.png")
-
-    # Generate and save the convergence plot
-    plot.plot_convergence(pareto_front, convergence_plot_path)
-
-    plot.plot_objective_distribution(pareto_front, objective_distribution_path)
-    print(pareto_front.columns)
-
-
-    plot.plot_objective(pareto_front, output_directory)
-    print(pareto_front)
-
-    #print("Ok")
-    #print(pareto_front)
-    #trade_off_plots(pareto_front)
-
-
-
 
 
 if __name__ == "__main__":

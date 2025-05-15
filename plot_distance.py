@@ -30,7 +30,7 @@ def plot_distance(original_data, optimized_data, save_dir):
 def main():
     current_directory = os.getcwd()
     original_data_path = os.path.join(current_directory, "Datasets", "stations_with_avg_distance.csv")
-    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data_with_covarage.csv")
+    optimized_data_path = os.path.join(current_directory, "Datasets", "optimized_data_with_avg_distance.csv")
     save_dir = os.path.join(current_directory, "Fig")
 
     # Load data
