@@ -23,21 +23,20 @@ You can install the required libraries using `pip`. Here is a sample installatio
 ```bash
 pip install pandas numpy matplotlib scikit-fuzzy seaborn scikit-learn nbimporter
 
-# Data set can be found at: 
-
 # Results
-![alt text](Latex/figures/evcs-nsga-flowchart.png)
-![alt text](Latex/figures/EVC_Levels.png)
+![alt text](Latex/Figures/evcs-nsga-flowchart.png)
+![alt text](Latex/Figures/EVC_Levels.png)
 ![alt text](Latex/Figures/Pareto_Front.png)
-![alt text](Latex/figures/Trade_Off.png)
-![alt text](Latex/figures/original_map.PNG)
-![alt text](Latex/figures/optimized_map.PNG)
-![alt text](Latex/figures/ev_distance.png)
-![alt text](Latex/figures/distance.png)
-![alt text](Latex/figures/Original_vs_Optimized_evcs_network.png)
-![alt text](Latex/figures/Original_vs_Optimized_evcs_chargers_number.png)
-![alt text](Latex/figures/Original_vs_Optimized_evcs_chargers_speed.png)
-![alt text](Latex/figures/plot_EVCS_cost.png)
+![alt text](Latex/Figures/Trade_Off.png)
+![alt text](Latex/Figures/original_map.PNG)
+![alt text](Latex/Figures/optimized_map.PNG)
+![alt text](Latex/Figures/ev_distance.png)
+![alt text](Latex/Figures/distance.png)
+![alt text](Latex/Figures/Original_vs_Optimized_evcs_network.png)
+![alt text](Latex/Figures/Original_vs_Optimized_evcs_chargers_number.png)
+![alt text](Latex/Figures/Original_vs_Optimized_evcs_chargers_speed.png)
+![alt text](Latex/Figures/plot_EVCS_cost.png)
+
 
 
 
