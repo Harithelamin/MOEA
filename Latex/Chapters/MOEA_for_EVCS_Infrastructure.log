@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  16 MAY 2025 07:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  16 MAY 2025 08:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,8 +549,24 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box75
+) (moea_for_evcs_Infrastructure.aux
+
+Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' multiply defined.
+
+
+moea_for_evcs_Infrastructure.aux:273: Package natbib Error: Bibliography not compatible with author-year citations.
+(natbib)                Press <return> to continue in numerical citation style.
+
+See the natbib package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.273 ...and\NAT@force@numbers{}\NAT@force@numbers
+                                                  
+Check the bibliography entries for non-compliant syntax,
+or select author-year BibTeX style, e.g. plainnat
+
 )
-No file moea_for_evcs_Infrastructure.aux.
 \openout1 = `moea_for_evcs_Infrastructure.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -571,7 +587,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-(C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count339
 \scratchdimen=\dimen288
@@ -591,6 +607,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 23.
+ (moea_for_evcs_Infrastructure.out) (moea_for_evcs_Infrastructure.out)
 \@outlinefile=\write4
 \openout4 = `moea_for_evcs_Infrastructure.out'.
 
@@ -637,28 +654,38 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 
 [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-No file moea_for_evcs_Infrastructure.toc.
-\tf@toc=\write5
-\openout5 = `moea_for_evcs_Infrastructure.toc'.
-
-
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (moea_for_evcs_Infrastructure.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+ (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 \newpage
-              [1
+l.32 ....1}Stations Dataset}{28}{subsection.5.2.1}
+                                                  % [1
 
 ]
-No file moea_for_evcs_Infrastructure.lof.
+
+[2])
+\tf@toc=\write5
+\openout5 = `moea_for_evcs_Infrastructure.toc'.
+
+
+
+[3] (moea_for_evcs_Infrastructure.lof)
 \tf@lof=\write6
 \openout6 = `moea_for_evcs_Infrastructure.lof'.
 
-(abstract.tex
+ (abstract.tex
 
-[2
+[4
 
 ]
 
@@ -694,9 +721,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
 l.28 
       [2]
 
-[3]
 
-[4]
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 
+      [3]
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.50 
+      [4]
 Overfull \hbox (0.71301pt too wide) in paragraph at lines 64--65
 []\OT1/cmr/m/n/12 Investigate multi-objective evo-lu-tion-ary al-go-rithms (MOEAs) to solve the EVCS
  []
@@ -709,75 +746,22 @@ Overfull \hbox (0.71301pt too wide) in paragraph at lines 64--65
 Chapter 2.
 (background.tex
 
-Package natbib Warning: Citation `RAC' on page 7 undefined on input line 16.
-
-
-
 [7
 
 ]
 
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 8 undefined on input line 18.
-
-
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 8 undefined on input line 25.
-
-
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 8 undefined on input line 25.
-
-
-Package natbib Warning: Citation `RAC' on page 8 undefined on input line 25.
-
-
-Package natbib Warning: Citation `DC Fast Chargers for Electric Vehicles' on page 8 undefined on input line 29.
-
-
-Package natbib Warning: Citation `Lifewire' on page 8 undefined on input line 32.
-
-
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 8 undefined on input line 32.
-
-
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 8 undefined on input line 33.
-
-
-
 [8]
 
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 9 undefined on input line 42.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
-(C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
- (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 9 undefined on input line 65.
-
-
-
 [9]
-
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 10 undefined on input line 67.
-
-<../Figures/EV_connecters.PNG, id=73, 542.025pt x 265.99374pt>
+<../Figures/EV_connecters.PNG, id=401, 542.025pt x 265.99374pt>
 File: ../Figures/EV_connecters.PNG Graphic file (type png)
 <use ../Figures/EV_connecters.PNG>
 Package pdftex.def Info: ../Figures/EV_connecters.PNG  used on input line 74.
 (pdftex.def)             Requested size: 346.89731pt x 170.24353pt.
 
-Package natbib Warning: Citation `Alternative Fuels Data Center' on page 10 undefined on input line 75.
-
-
 
 [10 <../Figures/EV_connecters.PNG>]
-
-Package natbib Warning: Citation `U.S. Department of Transportation' on page 11 undefined on input line 80.
-
-<../Figures/EVC_Levels.png, id=81, 362.007pt x 267.618pt>
+<../Figures/EVC_Levels.png, id=410, 362.007pt x 267.618pt>
 File: ../Figures/EVC_Levels.png Graphic file (type png)
 <use ../Figures/EVC_Levels.png>
 Package pdftex.def Info: ../Figures/EVC_Levels.png  used on input line 84.
@@ -788,72 +772,14 @@ Package pdftex.def Info: ../Figures/EVC_Levels.png  used on input line 84.
 
  <../Figures/EVC_Levels.png>]
 
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 12 undefined on input line 96.
-
-
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 12 undefined on input line 98.
-
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 12 undefined on input line 100.
-
-
-Package natbib Warning: Citation `Multi-objective' on page 12 undefined on input line 118.
-
-
-Package natbib Warning: Citation `An efficient neural architecture search system' on page 12 undefined on input line 120.
-
-
-
 [12]
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 13 undefined on input line 125.
-
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 13 undefined on input line 125.
-
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 13 undefined on input line 127.
-
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 13 undefined on input line 129.
-
-
-Package natbib Warning: Citation `Survey of multi-objective optimization methods' on page 13 undefined on input line 131.
-
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 13 undefined on input line 133.
-
-
 
 [13]
 
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 14 undefined on input line 135.
-
-
-Package natbib Warning: Citation `Nonlinear multiobjective optimization' on page 14 undefined on input line 142.
-
-
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 14 undefined on input line 142.
-
-
-
 [14]
-
-Package natbib Warning: Citation `Evolutionary algorithms in theory and practice' on page 15 undefined on input line 147.
-
-
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 15 undefined on input line 147.
-
-
 Overfull \hbox (3.65881pt too wide) in paragraph at lines 147--148
 []\OT1/cmr/m/n/12 Evolutionary Al-go-rithms (EAs) are population-based, stochas-tic op-ti-miza-tion tech-
  []
-
-
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 15 undefined on input line 149.
-
-
-Package natbib Warning: Citation `Evolutionary algorithms in theory and practice' on page 15 undefined on input line 158.
 
 
 Overfull \hbox (47.06575pt too wide) in paragraph at lines 164--164
@@ -861,52 +787,17 @@ Overfull \hbox (47.06575pt too wide) in paragraph at lines 164--164
  []
 
 
-Package natbib Warning: Citation `Evolutionary Multi-objective Optimization: A Historical View of the Field' on page 15 undefined on input line 166.
-
-
 
 [15]
 
-Package natbib Warning: Citation `Evolutionary Multi-objective Optimization: A Historical View of the Field' on page 16 undefined on input line 168.
-
-
-Package natbib Warning: Citation `Evolutionary Multi-objective Optimization: A Historical View of the Field' on page 16 undefined on input line 176.
-
-
-Package natbib Warning: Citation `IEEE Transactions on Evolutionary Computation' on page 16 undefined on input line 180.
-
-
-Package natbib Warning: Citation `IEEE Transactions on Evolutionary Computation' on page 16 undefined on input line 182.
-
-
-
 [16]
 
-Package natbib Warning: Citation `IEEE Transactions on Evolutionary Computation' on page 17 undefined on input line 189.
-
-
-Package natbib Warning: Citation `deb2002nsga2' on page 17 undefined on input line 189.
-
-
-
 [17]
-
-LaTeX Warning: Reference `fig:nsga_flowchart' on page 18 undefined on input line 209.
-
-
-Package natbib Warning: Citation `deb2002nsga2' on page 18 undefined on input line 209.
-
-<../Figures/nsga-flowchart.PNG, id=136, 513.92pt x 304.63812pt>
+<../Figures/nsga-flowchart.PNG, id=496, 513.92pt x 304.63812pt>
 File: ../Figures/nsga-flowchart.PNG Graphic file (type png)
 <use ../Figures/nsga-flowchart.PNG>
 Package pdftex.def Info: ../Figures/nsga-flowchart.PNG  used on input line 211.
 (pdftex.def)             Requested size: 346.89731pt x 205.63579pt.
-
-Package natbib Warning: Citation `IEEE Transactions on Evolutionary Computation' on page 18 undefined on input line 216.
-
-
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 18 undefined on input line 216.
-
 )
 
 [18 <../Figures/nsga-flowchart.PNG>]
@@ -917,13 +808,8 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 4.
 
 
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 19 undefined on input line 6.
-
-
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 19 undefined on input line 6.
-
-
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 19 undefined on input line 10.
+Package natbib Warning: Author undefined for citation`A genetic algorithm-based optimization for the location of electric vehicle charging stations' 
+(natbib)                on page 19 on input line 10.
 
 
 
@@ -931,25 +817,15 @@ Package natbib Warning: Citation `A genetic algorithm-based optimization for the
 
 ]
 
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 20 undefined on input line 12.
-
-
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 20 undefined on input line 16.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 20 undefined on input line 16.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 20 undefined on input line 22.
-
-
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 20 undefined on input line 22.
+Package natbib Warning: Author undefined for citation`A multi-objective optimization model for electric vehicle charging station location planning' 
+(natbib)                on page 20 on input line 12.
 
 
 
 [20]
 
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 21 undefined on input line 24.
+Package natbib Warning: Author undefined for citation`A multi-objective optimization model for electric vehicle charging station location planning' 
+(natbib)                on page 21 on input line 24.
 
 
 Overfull \hbox (22.56694pt too wide) in paragraph at lines 28--29
@@ -1002,12 +878,9 @@ Package natbib Warning: Citation `Introduction_to_evolutionary_computing' on pag
 Package natbib Warning: Citation `A_Fast_and_Elitist_Multi_objective_Genetic_Algorithm_NSGA_II' on page 25 undefined on input line 85.
 
 
-LaTeX Warning: Reference `fig:evcs_nsga_flowchart' on page 25 undefined on input line 89.
-
-
 
 [25]
-<..//Figures/evcs-nsga-flowchart.png, id=205, 766.36313pt x 304.63812pt>
+<..//Figures/evcs-nsga-flowchart.png, id=572, 766.36313pt x 304.63812pt>
 File: ..//Figures/evcs-nsga-flowchart.png Graphic file (type png)
 <use ..//Figures/evcs-nsga-flowchart.png>
 Package pdftex.def Info: ..//Figures/evcs-nsga-flowchart.png  used on input line 107.
@@ -1027,10 +900,6 @@ Overfull \hbox (7.97691pt too wide) in paragraph at lines 5--6
 
 ]
 
-Package natbib Warning: Citation `openchargemap' on page 28 undefined on input line 26.
-
-
-
 [28]
 Overfull \hbox (3.60602pt too wide) in paragraph at lines 34--35
 []\OT1/cmr/m/n/12 100 po-ten-tial lo-ca-tions for charg-ing sta-tions, each lo-ca-tion has num-ber of charger,
@@ -1040,9 +909,6 @@ Overfull \hbox (3.60602pt too wide) in paragraph at lines 34--35
 Overfull \hbox (1.40773pt too wide) in paragraph at lines 45--45
 []\OT1/cmr/bx/n/14.4 Electric Ve-hi-cle Charg-ing Sta-tion (EVCS) Cost Dataset 
  []
-
-
-Package natbib Warning: Citation `EVC infrastructure costs' on page 29 undefined on input line 46.
 
 
 Overfull \hbox (5.65508pt too wide) in paragraph at lines 53--53
@@ -1056,91 +922,26 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [29]
 
-Package natbib Warning: Citation `EV_dataset' on page 30 undefined on input line 79.
-
-
-
 [30]
-
-Package natbib Warning: Citation `ZCTAs' on page 31 undefined on input line 104.
-
-
-Package natbib Warning: Citation `ZCTAs' on page 31 undefined on input line 104.
-
-
 
 [31]
 
-Package natbib Warning: Citation `Optimizing EV Charging Infrastructure' on page 32 undefined on input line 130.
-
-
-Package natbib Warning: Citation `Demand-based EV Charging Station Placement' on page 32 undefined on input line 130.
-
-
-
 [32]
-
-Package natbib Warning: Citation `Demand-based EV Charging Station Placement' on page 33 undefined on input line 142.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 33 undefined on input line 159.
-
-
-Package natbib Warning: Citation `Multi-objective evolutionary algorithms for solving the electric vehicle charging station infrastructure problem' on page 33 undefined on input line 159.
-
-
 
 [33]
 
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 34 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Multi-objective evolutionary algorithms for solving the electric vehicle charging station infrastructure problem' on page 34 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Demand-based EV Charging Station Placement' on page 34 undefined on input line 191.
-
-
-
 [34]
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 35 undefined on input line 208.
-
-
-Package natbib Warning: Citation `Multi-objective evolutionary algorithms for solving the electric vehicle charging station infrastructure problem' on page 35 undefined on input line 208.
-
-
 
 [35]
 
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 36 undefined on input line 225.
-
-
-Package natbib Warning: Citation `Multi-objective evolutionary algorithms for solving the electric vehicle charging station infrastructure problem' on page 36 undefined on input line 225.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 36 undefined on input line 245.
-
-
-Package natbib Warning: Citation `Multi-objective evolutionary algorithms for solving the electric vehicle charging station infrastructure problem' on page 36 undefined on input line 245.
-
-
-
 [36]
-
-Package natbib Warning: Citation `Virtues of the Haversine' on page 37 undefined on input line 261.
-
-
 
 [37]
 
 [38]
 
 [39]
-
-LaTeX Warning: Reference `fig:EVCS Dataset' on page 40 undefined on input line 337.
-
-<../Figures/evcs_dataset.PNG, id=298, 546.04pt x 281.05pt>
+<../Figures/evcs_dataset.PNG, id=675, 546.04pt x 281.05pt>
 File: ../Figures/evcs_dataset.PNG Graphic file (type png)
 <use ../Figures/evcs_dataset.PNG>
 Package pdftex.def Info: ../Figures/evcs_dataset.PNG  used on input line 341.
@@ -1157,10 +958,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [40]
 
-Package natbib Warning: Citation `Evolutionary algorithms made easy' on page 41 undefined on input line 356.
-
-
-
 [41 <../Figures/evcs_dataset.PNG>]
 
 LaTeX Warning: Reference `subsec:objective-functions' on page 42 undefined on input line 371.
@@ -1174,53 +971,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--375
 
 [42]
 
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 43 undefined on input line 376.
-
-
-
 [43]
 
-Package natbib Warning: Citation `Multi-Objective Optimization using Evolutionary Algorithms' on page 44 undefined on input line 394.
-
-
-Package natbib Warning: Citation `Introduction to evolutionary computing. Springer' on page 44 undefined on input line 406.
-
-
-
 [44]
-
-Package natbib Warning: Citation `A Fast and Elitist Multi-objective Genetic Algorithm: NSGA-II' on page 45 undefined on input line 411.
-
-
-Package natbib Warning: Citation `Introduction to evolutionary computing. Springer' on page 45 undefined on input line 414.
-
-
-Package natbib Warning: Citation `Introduction to evolutionary computing. Springer' on page 45 undefined on input line 414.
-
-
-Package natbib Warning: Citation `Introduction to evolutionary computing. Springer' on page 45 undefined on input line 416.
-
-
-Package natbib Warning: Citation `Introduction to evolutionary computing. Springer' on page 45 undefined on input line 416.
-
-
 
 [45])
 
 [46]
 Chapter 6.
 (results.tex
-
-Package natbib Warning: Citation `A Fast and Elitist Multi-objective Genetic Algorithm: NSGA-II' on page 47 undefined on input line 3.
-
-
-LaTeX Warning: Reference `fig:nsga2_metrics' on page 47 undefined on input line 3.
-
-<../Figures/nsga2_metrics.png, id=343, 722.7pt x 433.62pt>
+<../Figures/nsga2_metrics.png, id=732, 722.7pt x 433.62pt>
 File: ../Figures/nsga2_metrics.png Graphic file (type png)
 <use ../Figures/nsga2_metrics.png>
 Package pdftex.def Info: ../Figures/nsga2_metrics.png  used on input line 7.
 (pdftex.def)             Requested size: 346.89731pt x 208.13524pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1232,20 +997,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [48 <../Figures/nsga2_metrics.png>]
 
-LaTeX Warning: Reference `fig:pareto_front' on page 49 undefined on input line 16.
-
-
-
 [49]
-<../Figures/Pareto_front.png, id=361, 867.24pt x 578.16pt>
+<../Figures/Pareto_front.png, id=748, 867.24pt x 578.16pt>
 File: ../Figures/Pareto_front.png Graphic file (type png)
 <use ../Figures/Pareto_front.png>
 Package pdftex.def Info: ../Figures/Pareto_front.png  used on input line 26.
 (pdftex.def)             Requested size: 346.89731pt x 231.26872pt.
-
-
-LaTeX Warning: Reference `fig:trade_off' on page 50 undefined on input line 33.
-
 
 
 [50
@@ -1253,20 +1010,17 @@ LaTeX Warning: Reference `fig:trade_off' on page 50 undefined on input line 33.
  <../Figures/Pareto_front.png>]
 
 [51]
-<../Figures/Trade_Off.png, id=374, 1011.78pt x 1084.05pt>
+<../Figures/Trade_Off.png, id=759, 1011.78pt x 1084.05pt>
 File: ../Figures/Trade_Off.png Graphic file (type png)
 <use ../Figures/Trade_Off.png>
 Package pdftex.def Info: ../Figures/Trade_Off.png  used on input line 43.
 (pdftex.def)             Requested size: 303.53267pt x 325.21751pt.
-
-
-LaTeX Warning: Reference `fig:Stations_Chargers' on page 52 undefined on input line 49.
-
-<../Figures/Original_vs_Optimized_evcs_network.png, id=375, 362.007pt x 217.467pt>
+<../Figures/Original_vs_Optimized_evcs_network.png, id=761, 362.007pt x 217.467pt>
 File: ../Figures/Original_vs_Optimized_evcs_network.png Graphic file (type png)
 <use ../Figures/Original_vs_Optimized_evcs_network.png>
 Package pdftex.def Info: ../Figures/Original_vs_Optimized_evcs_network.png  used on input line 56.
 (pdftex.def)             Requested size: 303.53267pt x 182.3425pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1276,20 +1030,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
  <../Figures/Trade_Off.png>]
 
-LaTeX Warning: Reference `fig:Original_Chargers_Speed_vs_Optimized_Chargers_Speed' on page 53 undefined on input line 71.
-
-
-LaTeX Warning: Reference `fig:Original_Chargers_Number_vs_Optimized_Chargers_Number' on page 53 undefined on input line 71.
-
-
-
 [53 <../Figures/Original_vs_Optimized_evcs_network.png>]
-<../Figures/Original_vs_Optimized_evcs_chargers_number.png, id=390, 362.007pt x 217.467pt>
+<../Figures/Original_vs_Optimized_evcs_chargers_number.png, id=774, 362.007pt x 217.467pt>
 File: ../Figures/Original_vs_Optimized_evcs_chargers_number.png Graphic file (type png)
 <use ../Figures/Original_vs_Optimized_evcs_chargers_number.png>
 Package pdftex.def Info: ../Figures/Original_vs_Optimized_evcs_chargers_number.png  used on input line 77.
 (pdftex.def)             Requested size: 303.53267pt x 182.3425pt.
-<../Figures/Original_vs_Optimized_evcs_chargers_speed.png, id=391, 362.007pt x 217.467pt>
+<../Figures/Original_vs_Optimized_evcs_chargers_speed.png, id=775, 362.007pt x 217.467pt>
 File: ../Figures/Original_vs_Optimized_evcs_chargers_speed.png Graphic file (type png)
 <use ../Figures/Original_vs_Optimized_evcs_chargers_speed.png>
 Package pdftex.def Info: ../Figures/Original_vs_Optimized_evcs_chargers_speed.png  used on input line 84.
@@ -1297,29 +1044,20 @@ Package pdftex.def Info: ../Figures/Original_vs_Optimized_evcs_chargers_speed.pn
 
 
 [54 <../Figures/Original_vs_Optimized_evcs_chargers_number.png> <../Figures/Original_vs_Optimized_evcs_chargers_speed.png>]
-
-LaTeX Warning: Reference `fig:EVCS coverage' on page 55 undefined on input line 94.
-
-<../Figures/coverage_stations.png, id=400, 722.7pt x 433.62pt>
+<../Figures/coverage_stations.png, id=784, 722.7pt x 433.62pt>
 File: ../Figures/coverage_stations.png Graphic file (type png)
 <use ../Figures/coverage_stations.png>
 Package pdftex.def Info: ../Figures/coverage_stations.png  used on input line 98.
 (pdftex.def)             Requested size: 303.53267pt x 182.11916pt.
 
-LaTeX Warning: Reference `fig:location_before' on page 55 undefined on input line 103.
-
-
-LaTeX Warning: Reference `fig:location_after' on page 55 undefined on input line 103.
-
-
 
 [55 <../Figures/coverage_stations.png>]
-<../Figures/original_map.png, id=408, 462.528pt x 346.896pt>
+<../Figures/original_map.png, id=792, 462.528pt x 346.896pt>
 File: ../Figures/original_map.png Graphic file (type png)
 <use ../Figures/original_map.png>
 Package pdftex.def Info: ../Figures/original_map.png  used on input line 107.
 (pdftex.def)             Requested size: 303.53267pt x 227.66052pt.
-<../Figures/optimized_map.png, id=409, 462.528pt x 346.896pt>
+<../Figures/optimized_map.png, id=793, 462.528pt x 346.896pt>
 File: ../Figures/optimized_map.png Graphic file (type png)
 <use ../Figures/optimized_map.png>
 Package pdftex.def Info: ../Figures/optimized_map.png  used on input line 114.
@@ -1332,15 +1070,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [56 <../Figures/original_map.png>]
 
-LaTeX Warning: Reference `fig:plot_distance_1' on page 57 undefined on input line 121.
-
-
-LaTeX Warning: Reference `fig:plot_evcs_layout' on page 57 undefined on input line 123.
-
-
-
 [57 <../Figures/optimized_map.png>]
-<../Figures/distance.png, id=423, 578.16pt x 433.62pt>
+<../Figures/distance.png, id=806, 578.16pt x 433.62pt>
 File: ../Figures/distance.png Graphic file (type png)
 <use ../Figures/distance.png>
 Package pdftex.def Info: ../Figures/distance.png  used on input line 129.
@@ -1348,7 +1079,7 @@ Package pdftex.def Info: ../Figures/distance.png  used on input line 129.
 
 
 [58 <../Figures/distance.png>]
-<../Figures/ev_distance.png, id=430, 578.16pt x 361.35pt>
+<../Figures/ev_distance.png, id=812, 578.16pt x 361.35pt>
 File: ../Figures/ev_distance.png Graphic file (type png)
 <use ../Figures/ev_distance.png>
 Package pdftex.def Info: ../Figures/ev_distance.png  used on input line 138.
@@ -1361,12 +1092,9 @@ Overfull \hbox (3.06168pt too wide) in paragraph at lines 156--156
  []
 
 
-LaTeX Warning: Reference `fig:network_cost_comparison' on page 60 undefined on input line 158.
-
-
 
 [60]
-<../Figures/plot_EVCS_cost.png, id=442, 578.16pt x 433.62pt>
+<../Figures/plot_EVCS_cost.png, id=824, 578.16pt x 433.62pt>
 File: ../Figures/plot_EVCS_cost.png Graphic file (type png)
 <use ../Figures/plot_EVCS_cost.png>
 Package pdftex.def Info: ../Figures/plot_EVCS_cost.png  used on input line 164.
@@ -1383,49 +1111,17 @@ LaTeX Warning: Reference `sec:performance-metrics' on page 61 undefined on input
 Chapter 7.
 (discussion.tex
 
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 62 undefined on input line 5.
-
-
-
 [62
 
 ]
 
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 63 undefined on input line 11.
-
-
-
 [63]
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 64 undefined on input line 25.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 64 undefined on input line 31.
-
-
 
 [64]
 
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 65 undefined on input line 33.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 65 undefined on input line 37.
-
-
-Package natbib Warning: Citation `A multi-objective optimization model for electric vehicle charging station location planning' on page 65 undefined on input line 39.
-
-
-
 [65]
 
-[66]
-
-Package natbib Warning: Citation `A review of charging technologies and infrastructure for electric vehicles. Transportation Research' on page 67 undefined on input line 55.
-
-
-Package natbib Warning: Citation `A genetic algorithm-based optimization for the location of electric vehicle charging stations' on page 67 undefined on input line 58.
-
-)
+[66])
 
 [67]
 Chapter 8.
@@ -1444,27 +1140,27 @@ Chapter 8.
 [71
 
 ]
-Underfull \hbox (badness 1997) in paragraph at lines 4--5
-[]\OT1/cmr/m/n/12 Alternative Fu-els Data Cen-ter. (n.d.). *Elec-tric ve-hi-cle charg-ing sta-tion lo-
+Underfull \hbox (badness 1748) in paragraph at lines 4--5
+[]\OT1/cmr/m/n/12 Alternative Fu-els Data Cen-ter. (n.d.). *Elec-tric ve-hi-cle charg-ing sta-tion
  []
 
 
-Underfull \hbox (badness 5050) in paragraph at lines 4--5
-\OT1/cmr/m/n/12 ca-tions*. U.S. De-part-ment of En-ergy. Re-trieved April 30, 2025, from
+Underfull \hbox (badness 1603) in paragraph at lines 4--5
+\OT1/cmr/m/n/12 lo-ca-tions*. U.S. De-part-ment of En-ergy. Re-trieved April 30, 2025, from
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 6--7
-[]\OT1/cmr/m/n/12 Power Sonic. (n.d.). DC Fast Charg-ers for Elec-tric Ve-hi-cles. Re-trieved from
+Underfull \hbox (badness 1845) in paragraph at lines 8--9
+[]\OT1/cmr/m/n/12 U.S. De-part-ment of Trans-porta-tion. (2023). Charg-ing speeds. Ur-ban E-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-\OT1/cmr/m/n/12 Toolkit. https://www.transportation.gov/urban-e-mobility-toolkit/e-mobility-
+Underfull \hbox (badness 1033) in paragraph at lines 8--9
+\OT1/cmr/m/n/12 Mobility Toolkit. https://www.transportation.gov/urban-e-mobility-toolkit/e-
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 11--12
+Underfull \hbox (badness 2469) in paragraph at lines 11--12
 []\OT1/cmr/m/n/12 RAC. (2024). \OT1/cmr/m/it/12 Charger types, con-nec-tors and speed\OT1/cmr/m/n/12 . Re-trieved May 11,
  []
 
@@ -1475,7 +1171,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
-[]$\OT1/cmtt/m/n/12 https : / / www . lifewire . com / ev-[]charging-[]levels-[]explained-[]5201716 ? utm _
+[]$\OT1/cmtt/m/n/12 https : / / www . lifewire . com / ev-[]charging-[]levels-[]explained-[]5201716 ?
  []
 
 
@@ -1483,26 +1179,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 [72
 
 ]
-Underfull \hbox (badness 1205) in paragraph at lines 44--45
-[]\OT1/cmr/m/n/12 Huang, Y., & Wang, L. (2019). A ge-netic algorithm-based op-ti-miza-tion for
- []
-
-
-Underfull \hbox (badness 1132) in paragraph at lines 54--55
-\OT1/cmr/m/n/12 for the lo-ca-tion of elec-tric ve-hi-cle charg-ing sta-tions. \OT1/cmr/m/it/12 En-ergy\OT1/cmr/m/n/12 , 207, 118295.
- []
-
-
-Underfull \hbox (badness 3612) in paragraph at lines 62--63
-[]\OT1/cmr/m/n/12 Asensio, E., Goza-lvez, J., & Cano, J. (2021). Multi-objective evo-lu-tion-
- []
-
-
-Underfull \hbox (badness 1845) in paragraph at lines 62--63
-\OT1/cmr/m/n/12 ary al-go-rithms for solv-ing the elec-tric ve-hi-cle charg-ing sta-tion in-fras-truc-
- []
-
-
 
 [73]
 pdfTeX warning (ext4): destination with the same identifier (name{cite.Multi-Objective\040Optimization\040using\040Evolutionary\040Algorithms}) has been already used, duplicate ignored
@@ -1512,27 +1188,50 @@ l.88 ...ptimization using Evolutionary Algorithms}
                                                   
 
 [74]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 2941) in paragraph at lines 108--109
 []\OT1/cmr/m/n/12 DEAP Doc-u-men-ta-tion, "NSGA-II (NSGA2) in DEAP," []$\OT1/cmtt/m/n/12 https : / / deap .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+[]\OT1/cmr/m/n/12 Geopy Doc-u-men-ta-tion, "Geopy Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / / geopy .
  []
 
 
 
 [75]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 1742) in paragraph at lines 128--129
 []\OT1/cmr/m/n/12 Requests Doc-u-men-ta-tion, "Re-quests Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https : / / requests .
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 139--140
-[]\OT1/cmr/m/n/12 U.S. Cen-sus Bu-reau. (2010). ZIP Code Tab-u-la-tion Ar-eas (ZC-TAs) 2010.
+Underfull \hbox (badness 1748) in paragraph at lines 133--134
+\OT1/cmr/m/it/12 Trans-porta-tion\OT1/cmr/m/n/12 . []$\OT1/cmtt/m/n/12 https : / / theicct . org / wp-[]content / uploads / 2021 / 06 / ICCT _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+[]\OT1/cmr/m/n/12 DEAP Doc-u-men-ta-tion, \OT1/cmr/m/it/12 NSGA-II (NSGA2) in DEAP\OT1/cmr/m/n/12 , Avail-able at:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+[]$\OT1/cmtt/m/n/12 https : / / deap . readthedocs . io / en / master / tutorials / faq . html #
  []
 
 
 
-[76])
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+[]\OT1/cmr/m/n/12 Matplotlib Doc-u-men-ta-tion, "Mat-plotlib Doc-u-men-ta-tion," []$\OT1/cmtt/m/n/12 https :
+ []
+
+)
 
 Package natbib Warning: There were undefined citations.
+
+
+Package natbib Warning: There were multiply defined citations.
 
 
 
@@ -1540,19 +1239,6 @@ Package natbib Warning: There were undefined citations.
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
-
-
-moea_for_evcs_Infrastructure.aux:273: Package natbib Error: Bibliography not compatible with author-year citations.
-(natbib)                Press <return> to continue in numerical citation style.
-
-See the natbib package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.273 ...and\NAT@force@numbers{}\NAT@force@numbers
-                                                  
-Check the bibliography entries for non-compliant syntax,
-or select author-year BibTeX style, e.g. plainnat
 
 )
  ***********
@@ -1563,30 +1249,21 @@ L3 programming layer <2024-10-09>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `moea_for_evcs_Infrastructure.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `moea_for_evcs_Infrastructure.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  1EF8424B1E028F4D4FE98458121E994B;11260.
+Package rerunfilecheck Info: File `moea_for_evcs_Infrastructure.out' has not changed.
+(rerunfilecheck)             Checksum: 1EF8424B1E028F4D4FE98458121E994B;11260.
  ) 
 Here is how much of TeX's memory you used:
- 32643 strings out of 473701
- 771298 string characters out of 5718941
- 1252650 words of memory out of 5000000
- 54920 multiletter control sequences out of 15000+600000
+ 32712 strings out of 473701
+ 772876 string characters out of 5718941
+ 1253650 words of memory out of 5000000
+ 54979 multiletter control sequences out of 15000+600000
  568509 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,1371b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on moea_for_evcs_Infrastructure.pdf (82 pages, 1154090 bytes).
+Output written on moea_for_evcs_Infrastructure.pdf (84 pages, 1218377 bytes).
 PDF statistics:
- 742 PDF objects out of 1000 (max. 8388607)
+ 1094 PDF objects out of 1200 (max. 8388607)
  267 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 530 words of extra memory for PDF output out of 10000 (max. 10000000)
 
