@@ -1,5 +1,5 @@
 # MOEA
-This project use Multi objective Evolutionary Algorithms for the Electric vehicle charging stand infrastructure problem
+This project uses Multi-Objective Evolutionary Algorithms (MOEAs) to address the electric vehicle charging station infrastructure problem
 
 ## Required Libraries
 
