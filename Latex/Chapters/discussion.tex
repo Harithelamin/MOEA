@@ -26,22 +26,33 @@ Minimizing the average distance between EVs and their nearest charging station i
 
 The trade-off between minimizing average distance and controlling infrastructure costs is significant. By minimizing the average distance, the algorithm ensures that EV users experience shorter travel times to reach a charging station, enhancing the overall user experience. However, this also results in a greater deployment of charging stations, which increases the cost of infrastructure. The optimization process successfully identified solutions that balance this trade-off, offering multiple deployment strategies that vary in terms of coverage, cost, and service quality.
 
-\subsection{5. Trade-offs and Practical Implications}
+\subsection{Trade-offs and Practical Implications}
 
 The results of this study highlight the complexity of deploying EVCS networks. Each solution on the Pareto front represents a different balance of the five conflicting objectives. This diversity allows for the selection of a solution that meets the specific needs and priorities of different stakeholders, such as local governments, utility companies, and EV users. For example, a municipality focused on accessibility might prioritize coverage and minimizing average distance, while a cost-conscious organization might favor solutions that minimize the number of stations and chargers \citep{A multi-objective optimization model for electric vehicle charging station location planning}.
 
 However, the optimization results also underscore the challenges faced by decision-makers in real-world EVCS deployment. While the optimization process provides valuable insights into the ideal configurations for charging stations, there are several practical considerations that must be taken into account when implementing these solutions. For instance, land availability, regulatory constraints, and social equity are all factors that influence the feasibility of deploying charging stations. Additionally, the cost of high-speed chargers and their long-term operational costs need to be considered when making deployment decisions \citep{A genetic algorithm-based optimization for the location of electric vehicle charging stations}.
 
-\section{6. NSGA-II Algorithm Effectiveness}
+\section{NSGA-II Algorithm Effectiveness}
 
 The NSGA-II algorithm proved to be an effective tool for solving the multi-objective EVCS optimization problem. By generating a diverse set of Pareto-optimal solutions, the algorithm provides decision-makers with multiple options that balance the different objectives. The algorithm’s ability to explore a wide solution space while considering conflicting objectives, such as coverage, cost, and service quality, makes it particularly suitable for complex optimization problems like EVCS planning \citep{A multi-objective optimization model for electric vehicle charging station location planning}.
 
 The algorithm also demonstrated good convergence to the ideal Pareto front, with solutions clustering close to the ideal points while maintaining diversity across the front. This ensures that the optimization process was comprehensive, exploring different parts of the solution space and generating a wide range of viable deployment strategies. The ability to select the most appropriate solution from the Pareto front gives decision-makers the flexibility to tailor the charging network to specific needs and constraints \citep{A multi-objective optimization model for electric vehicle charging station location planning}.
 
-\section{7. Limitations and Future Work}
+\section{Comparison with Previous Work}
+
+The two studies reviewed in the literature have beed focused on optimizing a limited set of objectives. One study minimizes installation costs and travel distances while maximizing station utilization, and the other uses a genetic algorithm to reduce operational costs and improve service coverage. However, neither study addresses all five objectives considered in this research: maximizing coverage, maximizing charger speed, minimizing the number of stations, minimizing the number of chargers, and minimizing average distance between EVs, and nearest station. 
+
+Moreover, charger speed is often overlooked as a decision variable, and the number of stations and chargers is not directly optimized. In terms of results, both studies describe general improvements in performance, but they do not report specific numerical outcomes such as cost reduction or infrastructure changes.
+
+In contrast, this study achieved measurable and significant improvements using NSGA-II. The optimized EVCS layout reduced the total network cost from \$5.87 million to \$3.75 million—a 36\% decrease. This was accomplished by reducing the number of stations from 19 to 7 and the number of chargers from 69 to 18, while still ensuring effective coverage and improving charger speeds to minimize user wait times.
+
+These clear results show the benefits of using a broader multi-objective optimization approach compared to the simpler methods used in earlier studies.
+
+\section{Limitations and Future Work}
 
 While the results from this study are promising, there are limitations that should be addressed in future work. First, the model assumes a fixed set of candidate station locations and does not account for dynamic factors such as changes in demand over time or the availability of new technologies. Future research could explore the integration of temporal aspects, such as varying demand patterns throughout the day or year, to make the optimization process more dynamic and responsive to real-world conditions.
 
-Additionally, the model focuses solely on the optimization of charging station deployment, without considering the broader impact on the electrical grid or the need for energy storage solutions. Future studies could integrate grid constraints and explore how different charging station configurations affect grid stability, energy consumption, and the adoption of renewable energy sources.
+The model assumes that all chargers are upgraded from Level 1 and Level 2 to Level 3, without accounting for the associated economic implications. Additionally, it focuses solely on optimizing the deployment of charging stations, without considering the broader impacts on the electrical grid or the potential need for energy storage solutions. Future studies could incorporate grid constraints and evaluate how different charging station configurations influence grid stability, energy demand, and the integration of renewable energy sources \cite{A review of charging technologies and infrastructure for electric vehicles. Transportation Research}.
+
 
 Finally, while this study focused on the technical aspects of EVCS optimization, future research should consider the social and economic factors that influence the success of charging networks. For instance, user behavior, pricing strategies, and public policies can all play a significant role in the adoption and effectiveness of EVCS networks \citep{A genetic algorithm-based optimization for the location of electric vehicle charging stations}.

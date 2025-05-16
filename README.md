@@ -24,6 +24,24 @@ You can install the required libraries using `pip`. Here is a sample installatio
 pip install pandas numpy matplotlib scikit-fuzzy seaborn scikit-learn nbimporter
 ```
 
+## Run Steps 
+1. Fetch and preprocess station data
+    stations.main 
+2. Fetch and preprocess EV data
+    update_vehicles_with_coord.main 
+3. Add coverage information to original station data
+    add_coverage_to_station_data.main
+4. Add distance information to original station data    
+    add_distance_to_stations_data.main
+5. Run NSGA-II optimization for EVCS
+    nsga_II.main
+6. Add coverage information to optimized station data
+    add_coverage_to_optimized_data.main
+7. Add distance information to optimized station data    
+    add_distance_to_optimized_data.main
+8. Calculate cost of original and optimized EVCS networks    
+    calculate_evcs_cost.main
+
 ### Results
 ![alt text](Latex/Figures/evcs-nsga-flowchart.png)
 ![alt text](Latex/Figures/EVC_Levels.png)

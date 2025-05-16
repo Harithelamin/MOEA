@@ -6,21 +6,21 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Flowchart of the NSGA-II algorithm.}}{18}{figure.2.4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Flowchart of the NSGA-II algorithm for EVCS network optimization.}}{28}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Flowchart of the NSGA-II algorithm for EVCS network optimization.}}{26}{figure.4.1}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces EVCS Dataset}}{43}{figure.5.1}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces EVCS Dataset}}{41}{figure.5.1}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Performance metrics of NSGA-II over generations}}{50}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Pareto front showing trade-offs between coverage, cahrger speed, number of charger, and distance betwen EV and the station.}}{52}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Objective trade-offs among selected Pareto-optimal solutions.}}{54}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Original EVCS Network vs Optimized EVCS Network.}}{55}{figure.6.4}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of original and optimized EVCS charger numbers.}}{56}{figure.6.5}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Comparison of original and optimized EVCS charger speeds.}}{56}{figure.6.6}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces EVCS coverage per station.}}{57}{figure.6.7}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces EVCS locations before optimization.}}{58}{figure.6.8}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces EVCS locations after optimization.}}{59}{figure.6.9}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Average distance from EVs to their nearest EVCS before and after optimization.}}{60}{figure.6.10}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Optimized EVCS layout highlighting fast charger placement in high demand areas.}}{61}{figure.6.11}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Network cost comparison before and after NSGA-II optimization.}}{63}{figure.6.12}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Performance metrics of NSGA-II over generations}}{48}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Pareto front showing trade-offs between coverage, cahrger speed, number of charger, and distance betwen EV and the station.}}{50}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Objective trade-offs among selected Pareto-optimal solutions.}}{52}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Original EVCS Network vs Optimized EVCS Network.}}{53}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of original and optimized EVCS charger numbers.}}{54}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Comparison of original and optimized EVCS charger speeds.}}{54}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces EVCS coverage per station.}}{55}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces EVCS locations before optimization.}}{56}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces EVCS locations after optimization.}}{57}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Average distance from EVs to their nearest EVCS before and after optimization.}}{58}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Optimized EVCS layout highlighting fast charger placement in high demand areas.}}{59}{figure.6.11}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Network cost comparison before and after NSGA-II optimization.}}{61}{figure.6.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

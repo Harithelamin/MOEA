@@ -67,13 +67,6 @@ import add_distance_to_stations_data
 # 5. Min avg_distance
 
 
-# 5: wait time
-# daset
-# 1. EVCtatitons dataset
-# https://openchargemap.org
-# "key": "65480684-8133-4ba5-9289-949cc656022d"
-# run station.py 
-
 
 # 2. Cost dataset sources:
 #   https://theicct.org/wp-content/uploads/2021/06/ICCT_EV_Charging_Cost_20190813.pdf

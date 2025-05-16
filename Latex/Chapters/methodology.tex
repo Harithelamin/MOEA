@@ -1,119 +1,110 @@
-The optimization of the Electric Vehicle Charging Station (EVCS) network is addressed through a multi-objective optimization approach that considers five conflicting objectives: maximizing charger speed, maximizing coverage, minimizing the number of stations, minimizing the number of chargers, and minimizing the average distance between EVCS and EV. In this work, we employ the \textbf{NSGA-II (Non-dominated Sorting Genetic Algorithm II)} to solve this problem. The methodology is divided into two primary categories: (A) finding a single solution, and (B) finding the Pareto front, representing the set of optimal solutions.
+The optimization of the Electric Vehicle Charging Station (EVCS) network is addressed through a multi-objective optimization approach considering five conflicting objectives: maximizing charger speed, maximizing coverage, minimizing the number of stations, minimizing the number of chargers, and minimizing the average distance between EVCS and electric vehicles (EVs). This work employs the \textbf{NSGA-II (Non-dominated Sorting Genetic Algorithm II)} to solve this problem \cite{A_Fast_and_Elitist_Multi_objective_Genetic_Algorithm_NSGA_II}. The methodology is divided into two primary parts:  
+\textbf{(A)} finding a single optimized solution, and  
+\textbf{(B)} finding the Pareto front representing the set of optimal trade-off solutions.
 
-\subsection*{NSGA-II for EVCS Networks: The Project Approach}
+\subsection*{NSGA-II for EVCS Networks: Project Approach}
 
-The project approach follows a systematic application of NSGA-II to optimize the EVCS network. The solution approach is divided into two main tasks: finding a single optimized solution and identifying the Pareto front of solutions that offer the best trade-offs between the objectives.
+The project applies NSGA-II systematically to optimize the EVCS network by addressing two main tasks: identifying a single optimized solution and discovering the Pareto front of optimal solutions that balance the competing objectives \cite{Introduction_to_evolutionary_computing}.
 
-\subsubsection{Problem Formulation}
-The primary challenge of the EVCS network optimization problem is balancing several competing objectives, namely:
+\subsubsection*{Problem Formulation}
+
+The EVCS network optimization requires balancing several competing objectives:
+
 \begin{itemize}
-    \item \textbf{Maximize Charger Speed (Upgrade to Level 3):} To improve the efficiency of the EVCS network, all chargers should be upgraded to Level 3, which provides a minimum power output of 50 kW. This upgrade increases charging speed and helps reduce wait times for electric vehicles.
-
-    \item \textbf{Maximize coverage:} Ensuring that the selected stations cover the largest possible geographical area. 
-    
-    \item \textbf{Minimize the number of stations:} Reduce infrastructure costs by minimizing the number of stations deployed.
-    
-    \item \textbf{Minimize the number of chargers:} Optimizing the number of chargers to avoid overcapacity and excess costs.
-    
-    \item \textbf{Minimize the average distance:} Reduce the distance an electric vehicle needs to travel to find the nearest charging station.
+    \item \textbf{Maximize Charger Speed (Upgrade to Level 3):} Upgrade all chargers to Level 3, providing at least 50 kW power output, to reduce waiting times and improve efficiency.
+    \item \textbf{Maximize Coverage:} Ensure the selected stations cover the largest geographic area possible.
+    \item \textbf{Minimize Number of Stations:} Reduce infrastructure cost by minimizing the number of stations deployed.
+    \item \textbf{Minimize Number of Chargers:} Avoid overcapacity and excess cost by optimizing charger count.
+    \item \textbf{Minimize Average Distance:} Reduce travel distance for EV users to reach the nearest charging station.
 \end{itemize}
 
-The five objectives form a complex trade-off problem, where improving one objective may degrade another. NSGA-II is applied to address this multi-objective problem by providing a set of optimal solutions rather than a single solution.
+These five objectives create a complex trade-off problem, where improving one objective might negatively affect another. NSGA-II tackles this by generating a set of optimal solutions instead of a single answer \cite{A_Fast_and_Elitist_Multi_objective_Genetic_Algorithm_NSGA_II}.
 
-\subsection{A) Finding a Single Solution: Subset of Candidate Stations}
+\bigskip
+\textbf{Part A: Finding a Single Optimized Solution}
 
-In this part of the methodology, we aim to identify a \textbf{single solution} that represents an optimized configuration of EVCS stations. This solution involves selecting a subset of candidate stations that optimizes the trade-offs between the five objectives.
+This part focuses on identifying one optimized configuration of EVCS stations that balances the five objectives.
 
-\subsubsection{Representation of Solutions (Chromosomes)}
-Each individual in the population represents a solution (or configuration) for the EVCS network. Solutions are represented as chromosomes, which are vectors that encode the selection of stations and the characteristics of each station (e.g. number of chargers, charger speed). Each gene in the chromosome corresponds to a station, and the value of the gene represents its characteristics (e.g., number of chargers, charger speed).
+\paragraph{1. Representation of Solutions (Chromosomes)}  
+Each individual solution in the population is encoded as a chromosome, representing the selection and characteristics (e.g., number of chargers, charger speed) of candidate stations \cite{Introduction_to_evolutionary_computing}.
 
-\subsubsection{Fitness Evaluation}
-The fitness of each solution is evaluated using the five objectives outlined earlier. The following steps are taken:
-\begin{enumerate}
-    \item \textbf{Maximize charger speed:} The charger speed at each station, denoted by $P_i \in \{11.5, 14.2, 19.2, 25, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400\}$~kW, chargers are typically categorized as Level 1 (up to 2.3 kW), Level 2 (up to 22 kW), and Level 3 (above 50 kW). In the optimization process, the focus is on upgrading chargers to Level 3, with speeds ranging from [50, 60, 62, 80, 120, 150, 180, 200, 240, 250, 300, 325, 350, 400] kW. This update significantly impacts the charging speed and waiting time of electric vehicles, and the charging speed is evaluated at selected stations to achieve the highest possible speed.
-    
-    \item \textbf{Maximize coverage:} The geographical coverage area of the selected stations is calculated and maximized.   
-    
-    \item \textbf{Minimize the number of stations:} The solution is penalized for using more stations than necessary to meet the coverage requirement.
-    \item \textbf{Minimize the number of chargers:} Similarly, the solution is penalized for using more chargers than needed.
-    \item \textbf{Minimize the average distance:} The average distance for vehicles to reach a charging station is minimized.
-\end{enumerate}
-
-These objectives are combined into a fitness function that evaluates the overall quality of each solution.
-
-\subsubsection{Selection, Crossover, and Mutation}
-NSGA-II uses \textbf{non-dominated sorting} to rank solutions based on Pareto dominance. In the process:
-\begin{itemize}
-    \item \textbf{Selection:} Individuals are selected for reproduction based on their Pareto ranks. Solutions that dominate others (i.e., those that are not dominated by any other solution) are preferred.
-    \item \textbf{Crossover:} Crossover is applied to combine the genetic material of two parent solutions, creating offspring solutions that inherit characteristics from both parents.
-    \item \textbf{Mutation:} Mutation introduces small random changes to solutions to increase diversity in the population and avoid premature convergence.
-\end{itemize}
-
-\subsubsection{Result of Part A}
-The result of Part A is a \textbf{single solution}, which represents a viable configuration of stations. While this solution may not be the best for all objectives, it provides a balanced configuration that is practical for the EVCS network. This solution will optimize several of the objectives based on the trade-offs.
-
-\subsection{B) Finding the Pareto Front: Pareto-Optimal Solutions}
-
-The second part of the methodology involves finding the \textbf{Pareto front}, which consists of the set of \textbf{Pareto-optimal solutions}. These are the solutions that cannot be improved in any objective without degrading at least one other objective. 
-
-\subsubsection{Non-Dominated Sorting}
-NSGA-II sorts the population using \textbf{non-dominated sorting}. Individuals are ranked based on Pareto dominance:
-\begin{itemize}
-    \item The first Pareto front (\textit{Front 1}) contains the set of solutions that are not dominated by any other solution.
-    \item The second front (\textit{Front 2}) contains solutions that are dominated by solutions in Front 1 but not by any other solutions in Front 2, and so on.
-\end{itemize}
-
-This sorting allows the algorithm to prioritize solutions that represent the best trade-offs between the conflicting objectives.
-
-\subsubsection{Crowding Distance Calculation}
-To maintain diversity among the solutions, \textbf{crowding distance} is calculated for each individual. The crowding distance is a measure of how far an individual is from its neighbors in the objective space. Larger crowding distances suggest that a solution lies in a less crowded region, promoting diversity in the Pareto front.
-
-\subsubsection{Result of Part B}
-The result of Part B is the \textbf{Pareto front (Front 1)}, which contains the set of optimal solutions that represent the best trade-offs between the five objectives. Each solution in this front can not be improved in any objective without sacrificing performance in another objective. These solutions are Pareto-optimal and offer a range of viable EVCS configurations, each optimized for different priorities.
-
-\subsection{Final Interpretation of the Results}
-
-\subsubsection{A) Single Solution}
-The single solution found in Part A provides a configuration of stations and chargers that optimizes the EVCS network. This solution may not be the best in every objective but represents a practical and balanced configuration for deployment, considering the trade-offs between coverage, charger speed, station and charger count, and distance.
-
-\subsubsection{B) Pareto Front (Front 1)}
-The Pareto front consists of a set of solutions that are optimal with respect to the objectives. Decision-makers can choose from this front based on their specific needs and priorities, such as minimizing infrastructure cost, maximizing coverage, or reducing travel distance for EVs.
-
-\subsubsection{suppose output}
-
-The application of NSGA-II enables the generation of a \textbf{Pareto-optimal set of solutions} for the EVCS network. This method allows for the simultaneous optimization of multiple conflicting objectives, providing decision-makers with a variety of optimal configurations. The Pareto front offers flexibility in selecting solutions based on specific strategic goals, ensuring that the final network configuration optimizes the balance between coverage, charger speed, infrastructure costs, and distance minimization.
-
-
-
-
-
-
-%%%%%
-\subsubsection{NSGA-II Flowchart}
-
-The flowchart in Figure~\ref{fig:nsga_flowchart} illustrates the core workflow of the NSGA-II algorithm as applied to the EVCS network optimization problem. The algorithm begins with an initial population of candidate solutions (configurations of EV charging stations) and evolves this population over successive generations using selection, crossover, and mutation operators.
-
-The key steps in the NSGA-II flowchart are as follows:
+\paragraph{2. Fitness Evaluation}  
+Each solution’s fitness is evaluated based on the five objectives:
 
 \begin{enumerate}
-    \item \textbf{Initialize Population:} Generate an initial population of solutions randomly.
-    \item \textbf{Evaluate Fitness:} Compute the values of the five objective functions for each individual.
-    \item \textbf{Non-Dominated Sorting:} Sort the population into different Pareto fronts based on dominance.
-    \item \textbf{Crowding Distance Calculation:} Within each front, calculate the crowding distance to ensure diversity.
-    \item \textbf{Selection:} Use a crowded-comparison operator to select individuals for reproduction.
-    \item \textbf{Crossover and Mutation:} Apply genetic operators to generate new offspring solutions.
-    \item \textbf{Combine and Sort:} Combine parent and offspring populations and reapply non-dominated sorting.
-    \item \textbf{Next Generation:} Select the top individuals from the combined pool to form the next generation.
-    \item \textbf{Termination:} Repeat the above steps until the maximum number of generations is reached.
+    \item \textbf{Maximize Charger Speed:} Chargers have power levels \( P_i \in \{11.5,\, 14.2,\, 19.2,\, 25,\, 60,\, 62,\, 80,\, 120,\, 150,\, 180,\, 200,\, 240,\, 250,\, 300,\, 325,\, 350,\, 400\} \) kW. The focus is on upgrading to Level 3 chargers with power ratings of at least 50 kW.    
+    \item \textbf{Maximize Coverage:} Calculate and maximize the geographic area covered by selected stations.
+    \item \textbf{Minimize Number of Stations:} Penalize solutions using more stations than necessary.
+    \item \textbf{Minimize Number of Chargers:} Penalize solutions with excessive chargers.
+    \item \textbf{Minimize Average Distance:} Minimize average travel distance for EVs.
 \end{enumerate}
 
-This iterative process produces a set of non-dominated solutions that form the final Pareto front, offering multiple optimal trade-offs among the five conflicting objectives.
+These objectives combine into a fitness function measuring overall solution quality \cite{Introduction_to_evolutionary_computing}.
+
+\paragraph{3. Selection, Crossover, and Mutation}  
+NSGA-II applies evolutionary operators:
+
+\begin{itemize}
+    \item \textbf{Selection:} Chooses individuals based on Pareto dominance ranking.
+    \item \textbf{Crossover:} Combines two parent solutions to create offspring with mixed characteristics.
+    \item \textbf{Mutation:} Introduces random changes to maintain diversity and avoid premature convergence.
+\end{itemize}
+
+\paragraph{Result of Part A}  
+The outcome is a single viable solution balancing the five objectives, offering a practical EVCS network configuration.
+
+\bigskip
+\textbf{Part B: Finding the Pareto Front – Pareto-Optimal Solutions}
+
+This part finds the \textbf{Pareto front}, a set of solutions where improving one objective worsens at least one other.
+
+\paragraph{1. Non-Dominated Sorting}  
+NSGA-II ranks solutions into fronts based on Pareto dominance:
+
+\begin{itemize}
+    \item \textit{Front 1:} Solutions not dominated by any other.
+    \item \textit{Front 2:} Solutions dominated only by Front 1 members.
+    \item And so on.
+\end{itemize}
+
+\paragraph{2. Crowding Distance Calculation}  
+Calculates how isolated solutions are in objective space to maintain diversity by preferring individuals in less crowded regions.
+
+\paragraph{Result of Part B}  
+The \textbf{Pareto front} (Front 1) consists of the best trade-off solutions, offering various EVCS configurations optimized for different priorities \cite{A_Fast_and_Elitist_Multi_objective_Genetic_Algorithm_NSGA_II}.
+
+\subsection*{Final Interpretation of Results}
+
+\paragraph{A) Single Solution}  
+The single solution provides a balanced and practical EVCS configuration that optimizes multiple objectives, though it may not be the best for all.
+
+\paragraph{B) Pareto Front}  
+The Pareto front offers a set of optimal solutions, giving decision-makers the flexibility to select configurations based on specific strategic goals like cost, coverage, or distance \cite{Introduction_to_evolutionary_computing}.
+
+\paragraph{Summary}  
+NSGA-II effectively generates a diverse set of Pareto-optimal solutions, enabling multi-objective optimization of EVCS networks and providing decision-makers with flexible deployment strategies balancing coverage, speed, cost, and accessibility \cite{A_Fast_and_Elitist_Multi_objective_Genetic_Algorithm_NSGA_II}.
+
+\subsubsection*{NSGA-II Flowchart}
+
+Figure~\ref{fig:evcs_nsga_flowchart} illustrates the NSGA-II algorithm workflow for EVCS network optimization:
+
+\begin{enumerate}
+    \item \textbf{Initialize Population:} Randomly generate initial solutions.
+    \item \textbf{Evaluate Fitness:} Calculate all objectives for each solution.
+    \item \textbf{Non-Dominated Sorting:} Rank solutions into Pareto fronts.
+    \item \textbf{Crowding Distance Calculation:} Measure solution diversity.
+    \item \textbf{Selection:} Choose individuals based on Pareto rank and crowding distance.
+    \item \textbf{Crossover and Mutation:} Generate new offspring solutions.
+    \item \textbf{Combine and Sort:} Merge parents and offspring; re-rank.
+    \item \textbf{Next Generation:} Select the best individuals for the next generation.
+    \item \textbf{Termination:} Repeat until max generations reached.
+\end{enumerate}
+
+This iterative process yields a Pareto front of non-dominated solutions representing optimal trade-offs.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{../Figures/evcs-nsga-flowchart.png}
+    \includegraphics[width=0.8\textwidth]{..//Figures/evcs-nsga-flowchart.png}
     \caption{Flowchart of the NSGA-II algorithm for EVCS network optimization.}
     \label{fig:evcs_nsga_flowchart}
 \end{figure}
-
-

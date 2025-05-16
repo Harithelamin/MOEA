@@ -25,13 +25,6 @@ from scipy.spatial import cKDTree as KDTree
 
 # NSGA-II Algorithm
 # to optimize multiple objectives: 
-# 1. Maximize coverage
-# 2. Maximize charger speed to reduce waiting time
-# 3. Minimize stations number to minimizing cost
-# 4. Minimize chargers number to minimizing cost
-# 5. minimizing cost. No action. 
-# The goal is to develop a solution that finds a balance between these objectives.
-
 
 # Define the objectives problem 
 # 1. Maximize coverage
@@ -39,10 +32,7 @@ from scipy.spatial import cKDTree as KDTree
 # 3. Minimize stations num
 # 4. Minimize chargers num
 # 5. Min avg_distance
-
-
-# 7 Station Accessibility. A lower average distance means EVs are generally close to the station
-# Minimize avg_distance
+# over all, minimizing cost. No action. 
 
 
 

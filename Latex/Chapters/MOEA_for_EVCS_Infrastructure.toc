@@ -16,53 +16,49 @@
 \contentsline {subsection}{\numberline {3.0.4}Comparative Insights and Research Gaps}{20}{subsection.3.0.4}%
 \contentsline {subsection}{\numberline {3.0.5}Summary}{21}{subsection.3.0.5}%
 \contentsline {chapter}{\numberline {4}Methodology}{22}{chapter.4}%
-\contentsline {subsubsection}{Problem Formulation}{22}{section*.4}%
-\contentsline {subsection}{\numberline {4.0.1}A) Finding a Single Solution: Subset of Candidate Stations}{23}{subsection.4.0.1}%
-\contentsline {subsubsection}{Representation of Solutions (Chromosomes)}{23}{section*.5}%
-\contentsline {subsubsection}{Fitness Evaluation}{24}{section*.6}%
-\contentsline {subsubsection}{Selection, Crossover, and Mutation}{24}{section*.7}%
-\contentsline {subsubsection}{Result of Part A}{25}{section*.8}%
-\contentsline {subsection}{\numberline {4.0.2}B) Finding the Pareto Front: Pareto-Optimal Solutions}{25}{subsection.4.0.2}%
-\contentsline {subsubsection}{Non-Dominated Sorting}{25}{section*.9}%
-\contentsline {subsubsection}{Crowding Distance Calculation}{26}{section*.10}%
-\contentsline {subsubsection}{Result of Part B}{26}{section*.11}%
-\contentsline {subsection}{\numberline {4.0.3}Final Interpretation of the Results}{26}{subsection.4.0.3}%
-\contentsline {subsubsection}{A) Single Solution}{26}{section*.12}%
-\contentsline {subsubsection}{B) Pareto Front (Front 1)}{26}{section*.13}%
-\contentsline {subsubsection}{suppose output}{26}{section*.14}%
-\contentsline {subsubsection}{NSGA-II Flowchart}{27}{section*.15}%
-\contentsline {chapter}{\numberline {5}Experiment}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Experimental Environment}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Dataset}{30}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Stations Dataset}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Electric Vehicle Charging Station (EVCS) Cost Dataset}{31}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Electric Vehicle Dataset}{32}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4} ZIP Code Tabulation Dataset}{33}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Decision Variables}{34}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6} Calculate Weighted By EV Demand}{34}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Objective Functions}{35}{subsection.5.2.7}%
-\contentsline {subsection}{\numberline {5.2.8}Calculating Average Distance Between EVs and Nearest EVCS}{39}{subsection.5.2.8}%
-\contentsline {subsection}{\numberline {5.2.9}Constraints}{39}{subsection.5.2.9}%
-\contentsline {section}{\numberline {5.3}NSGA-II Algorithm Setup}{40}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Overview}{40}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Parameters}{40}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Encoding Strategy}{41}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Steps of the Applied NSGA-II Algorithm}{41}{subsection.5.3.4}%
-\contentsline {section}{\numberline {5.4}Performance Metrics}{47}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Results}{49}{chapter.6}%
-\contentsline {section}{\numberline {6.1}NSGA-II Matrix}{49}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Pareto Front Overview}{51}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Trade-off Analysis}{52}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Minimizing the Number of Stations and Chargers}{54}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Maximizing Charger Speed}{55}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Maximizing Coverage and Minimizing Average Distance}{57}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Minimizing Overall EVCS Infrastructure Costs}{62}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Discussion}{64}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Optimization of Coverage and Accessibility}{64}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Charger Speed and reducing the waiting time }{65}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Minimizing Infrastructure Costs: Number of Stations and Chargers}{65}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Minimization of the average distance between electric vehicles and nearest charging stations}{66}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}5. Trade-offs and Practical Implications}{67}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}6. NSGA-II Algorithm Effectiveness}{67}{section.7.4}%
-\contentsline {section}{\numberline {7.5}7. Limitations and Future Work}{68}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Conclusion}{69}{chapter.8}%
+\contentsline {paragraph}{1. Representation of Solutions (Chromosomes)}{23}{section*.5}%
+\contentsline {paragraph}{2. Fitness Evaluation}{23}{section*.6}%
+\contentsline {paragraph}{3. Selection, Crossover, and Mutation}{24}{section*.7}%
+\contentsline {paragraph}{Result of Part A}{24}{section*.8}%
+\contentsline {paragraph}{1. Non-Dominated Sorting}{24}{section*.9}%
+\contentsline {paragraph}{2. Crowding Distance Calculation}{24}{section*.10}%
+\contentsline {paragraph}{Result of Part B}{25}{section*.11}%
+\contentsline {paragraph}{A) Single Solution}{25}{section*.13}%
+\contentsline {paragraph}{B) Pareto Front}{25}{section*.14}%
+\contentsline {paragraph}{Summary}{25}{section*.15}%
+\contentsline {chapter}{\numberline {5}Experiment}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experimental Environment}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Dataset}{28}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Stations Dataset}{28}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Electric Vehicle Charging Station (EVCS) Cost Dataset}{29}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Electric Vehicle Dataset}{30}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4} ZIP Code Tabulation Dataset}{31}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Decision Variables}{32}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6} Calculate Weighted By EV Demand}{32}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Objective Functions}{33}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8}Calculating Average Distance Between EVs and Nearest EVCS}{37}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.9}Constraints}{37}{subsection.5.2.9}%
+\contentsline {section}{\numberline {5.3}NSGA-II Algorithm Setup}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Overview}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Parameters}{38}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Encoding Strategy}{39}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Steps of the Applied NSGA-II Algorithm}{39}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}Performance Metrics}{45}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Results}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}NSGA-II Matrix}{47}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Pareto Front Overview}{49}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Trade-off Analysis}{50}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Minimizing the Number of Stations and Chargers}{52}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Maximizing Charger Speed}{53}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Maximizing Coverage and Minimizing Average Distance}{55}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Minimizing Overall EVCS Infrastructure Costs}{60}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Discussion}{62}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Optimization of Coverage and Accessibility}{62}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Charger Speed and reducing the waiting time }{63}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Minimizing Infrastructure Costs: Number of Stations and Chargers}{63}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Minimization of the average distance between electric vehicles and nearest charging stations}{64}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Trade-offs and Practical Implications}{65}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}NSGA-II Algorithm Effectiveness}{65}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Comparison with Previous Work}{66}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Limitations and Future Work}{66}{section.7.6}%
+\contentsline {chapter}{\numberline {8}Conclusion}{68}{chapter.8}%
